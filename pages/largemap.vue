@@ -49,7 +49,7 @@ export default Vue.extend({
       Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('東京都23区の人口推移（参考値）'),
+        title: this.$t('宮崎県23区の人口推移（参考値）'),
         date: Data.lastUpdate
       },
       newsItems: News.newsItems
@@ -58,7 +58,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('東京都23区の人口推移（参考値）') as string
+      title: this.$t('宮崎県23区の人口推移（参考値）') as string
     }
   }
 })
