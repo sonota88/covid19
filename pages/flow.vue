@@ -89,7 +89,7 @@ export default Vue.extend({
     font-weight: bold;
     display: inline-block;
     text-decoration: none;
-    color: $green-1 !important;
+    color: $miyazaki-2 !important;
 
     &-Wrapper {
       text-align: center;
@@ -101,7 +101,7 @@ export default Vue.extend({
 
     &-ExternalLinkIcon {
       margin-left: 2px;
-      color: $green-1 !important;
+      color: $miyazaki-2 !important;
     }
   }
 
