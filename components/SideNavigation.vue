@@ -57,18 +57,7 @@
           </a>
         </div>
         <small class="SideNavigation-Copyright">
-          {{ $t('このサイトの内容物は') }}
-          <a
-            :href="$t('https://creativecommons.org/licenses/by/4.0/deed.ja')"
-            target="_blank"
-            rel="license"
-            class="SideNavigation-LicenseLink"
-          >
-            {{ $t('クリエイティブ・コモンズ 表示 4.0 ライセンス') }}
-          </a>
-          {{ $t('の下に提供されています。') }}
-          <br />
-          2020 Tokyo Metropolitan Government
+          2020 covid19-miyazaki
         </small>
       </footer>
     </div>
@@ -105,12 +94,7 @@ export default Vue.extend({
         {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('県内の最新感染動向'),
-          link: this.localePath('/')
-        },
-        {
-          icon: 'CovidIcon',
-          title: this.$t('新型コロナウイルス感染症が心配なときに'),
-          link: this.localePath('/flow'),
+          link: this.localePath('/'),
           divider: true
         },
         {
