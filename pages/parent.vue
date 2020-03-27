@@ -40,16 +40,38 @@
           {{ $t('各保健所の電話番号について') }}
           <br />
           <a
-            href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
+            href="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/20200121143156.html#hatsunetsu"
             target="_blank"
             rel="noopener"
-            >{{ $t('「新型コロナウイルス感染症にかかる相談窓口について」') }}</a
+            >{{ $t('帰国者・接触者相談センター等の連絡先') }}</a
           >
         </li>
       </ul>
     </StaticCard>
     <StaticCard>
-      <h3>3. {{ $t('その他.parent') }}</h3>
+      <h3>3. {{ $t('臨時休校について') }}</h3>
+      <p>
+        <a
+          href="https://www.pref.miyazaki.lg.jp/ky-somu/kurashi/kyoiku/ringikyugyo.html"
+          target="_blank"
+          rel="noopener"
+          >{{ $t('詳しくはこちらをご確認ください。') }}</a
+        >
+      </p>
+    </StaticCard>
+    <StaticCard>
+      <h3>4. {{ $t('学校の臨時休業に伴う放課後児童クラブ等の対応') }}</h3>
+      <p>
+        <a
+          href="https://www.pref.miyazaki.lg.jp/kodomo-seisaku/kenko/kodomo/20200302160147.html"
+          target="_blank"
+          rel="noopener"
+          >{{ $t('詳しくはこちらをご確認ください。') }}</a
+        >
+      </p>
+    </StaticCard>
+    <StaticCard>
+      <h3>5. {{ $t('その他.parent') }}</h3>
       <p>{{ $t('詳細は、各学校からのお知らせ等をご確認ください。') }}</p>
     </StaticCard>
   </div>
