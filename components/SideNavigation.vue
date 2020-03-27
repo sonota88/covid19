@@ -168,12 +168,12 @@ export default Vue.extend({
           divider: true
         },
         {
-          title: this.$t('新型コロナウイルス感染症関連情報'),
+          title: this.$t('宮崎県新型コロナウイルス感染症関連情報'),
           link:
             'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html'
         },
         {
-          title: this.$t('県主催イベント等の開催・公の施設の運営に関する基準'),
+          title: this.$t('宮崎県主催イベント等の開催に関する基準'),
           link:
             'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/20200323.html'
         },
