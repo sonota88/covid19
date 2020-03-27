@@ -2,7 +2,7 @@
 
 Contributors, thank you for participating in this project!
 
-I'm Seki, the development manager. If you have any questions, feel free to ask me on Slack etc.
+I'm covid19-miyazaki, who is developing the project. If you have any questions, please feel free to ask them on issues etc.!
 
 This page shows how you can contribute to the development of this site.
 
@@ -15,9 +15,11 @@ This page shows how you can contribute to the development of this site.
 * The Issue with `waiting` label is under review by the organizer.  The implementation should be refrained until the requirement is fixed.
 * We appreciate if you give priority to the issues labelled [good first issue / help wanted / bug]
 
+<!--
 ## How to participate in communications
 * If you do not have a "Code for Japan" Slack account, please register [here](https://cfjslackin.herokuapp.com/)
 * Join `#covid19` Channel
+-->
 
 ## For participation
 * Please read [Principle / Code of Conduct](./CODE_OF_CONDUCT.md) before participating in development.
