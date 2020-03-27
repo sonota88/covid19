@@ -17,15 +17,15 @@
         <tbody>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('新型コロナウイルス感染症対策に関すること') }}
-            </td>
-            <td class="bureau">
               <a
                 href="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html"
                 target="_blank"
                 rel="noopener"
-                >{{ $t('福祉保健部健康増進課感染症対策室感染症対策担当') }}</a
+                >{{ $t('新型コロナウイルス感染症対策に関すること') }}</a
               >
+            </td>
+            <td class="bureau">
+              {{ $t('福祉保健部健康増進課感染症対策室感染症対策担当') }}
             </td>
             <td class="tel"><a href="tel:0985-44-2620">0985-44-2620</a></td>
           </tr>
@@ -58,17 +58,17 @@
           </tr>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('学校の臨時休業に伴う放課後児童クラブ等の対応について') }}
-            </td>
-            <td class="bureau">
               <a
                 href="https://www.pref.miyazaki.lg.jp/kodomo-seisaku/kenko/kodomo/20200302160147.html"
                 target="_blank"
                 rel="noopener"
                 >{{
-                  $t('福祉保健部こども政策局 こども政策課子育て支援担当')
+                  $t('学校の臨時休業に伴う放課後児童クラブ等の対応について')
                 }}</a
               >
+            </td>
+            <td class="bureau">
+              {{ $t('福祉保健部こども政策局 こども政策課子育て支援担当') }}
             </td>
             <td class="tel"><a href="tel:0985-26-7056">0985-26-7056</a></td>
           </tr>
