@@ -1,5 +1,7 @@
 import { Configuration } from '@nuxt/types'
+import { Configuration as WebpackConfiguration } from 'webpack'
 import i18n from './nuxt-i18n.config'
+const webpack = require('webpack')
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
 const environment = process.env.NODE_ENV || 'development'
@@ -13,7 +15,7 @@ const config: Configuration = {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s | 東京都 新型コロナウイルス感染症対策サイト',
+    titleTemplate: '%s | 宮崎県 新型コロナウイルス感染症対策サイト',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -118,6 +120,11 @@ const config: Configuration = {
     id: 'UA-159417676-1'
   },
   build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        mapboxgl: 'mapbox-gl'
+      })
+    ],
     postcss: {
       plugins: [
         autoprefixer({ grid: 'autoplace' }),
@@ -133,12 +140,16 @@ const config: Configuration = {
           whitelistPatterns: [/(col|row)/]
         })
       ]
+    },
+    extend(config: WebpackConfiguration, _) {
+      // default externals option is undefined
+      config.externals = [{ moment: 'moment' }]
     }
     // https://ja.nuxtjs.org/api/configuration-build/#hardsource
     // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
-    name: '東京都 新型コロナウイルス感染症対策サイト',
+    name: '宮崎県 新型コロナウイルス感染症対策サイト',
     theme_color: '#00a040',
     background_color: '#ffffff',
     display: 'standalone',
