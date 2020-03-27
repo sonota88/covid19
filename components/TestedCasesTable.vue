@@ -121,7 +121,7 @@ $default-boxh: 150px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  color: $green-1;
+  color: $miyazaki-2;
   line-height: 1.35;
 
   * {
@@ -142,7 +142,7 @@ $default-boxh: 150px;
   flex: 0 0 auto;
   text-align: center;
   width: 100%;
-  border: $default-bdw solid $green-1;
+  border: $default-bdw solid $miyazaki-1;
 }
 
 .group {
@@ -150,8 +150,8 @@ $default-boxh: 150px;
   flex: 0 0 auto;
   padding-left: 0;
   padding-top: $default-bdw;
-  border-top: $default-bdw solid $green-1;
-  border-left: $default-bdw solid $green-1;
+  border-top: $default-bdw solid $miyazaki-1;
+  border-left: $default-bdw solid $miyazaki-1;
 }
 
 .content {
@@ -193,8 +193,8 @@ $default-boxh: 150px;
   display: flex;
 
   &.parent {
-    border-top: $default-bdw solid $green-1;
-    border-left: $default-bdw solid $green-1;
+    border-top: $default-bdw solid $miyazaki-1;
+    border-left: $default-bdw solid $miyazaki-1;
     position: relative;
 
     > .pillar {
@@ -226,7 +226,7 @@ $default-boxh: 150px;
       text-align: center;
       width: 100%;
       padding: 10px 10px 10px calc(10px + #{$default-bdw});
-      border-right: $default-bdw solid $green-1;
+      border-right: $default-bdw solid $miyazaki-1;
     }
 
     > .pillar {
