@@ -134,10 +134,6 @@ export default Vue.extend({
           link: this.localePath('/about')
         },
         {
-          title: this.$t('お問い合わせ先一覧'),
-          link: this.localePath('/contacts')
-        },
-        {
           title: this.$t('宮崎県公式ホームページ'),
           link: 'https://www.pref.miyazaki.lg.jp/'
         }
