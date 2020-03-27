@@ -2,7 +2,7 @@
 
 [![](https://github.com/covid19-miyazaki/covid19/workflows/production%20deploy/badge.svg)](https://github.com/covid19-miyazaki/covid19/actions?query=workflow%3A%22production+deploy%22) [![Netlify Status](https://api.netlify.com/api/v1/badges/ce202463-ed43-42a4-804b-3a28894d55f1/deploy-status)](https://app.netlify.com/sites/covid19-miyazaki/deploys)
 
-[![宮崎県 新型コロナウイルス感染症対策サイト](/static/20200327.png)](https://covid19-miyazaki.netlify.com/)
+[![宮崎県 新型コロナウイルス感染症対策サイト](/static/ogp.png)](https://covid19-miyazaki.netlify.com/)
 
 ### 日本語 | [English](./docs/en/README.md)
 

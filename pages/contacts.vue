@@ -17,105 +17,60 @@
         <tbody>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('サイト全般に関すること') }}
-            </td>
-            <td class="bureau">{{ $t('政策企画局') }}</td>
-            <td class="tel"><a href="tel:03-5388-2171">03-5388-2171</a></td>
-          </tr>
-          <tr>
-            <td class="content" role="heading" aria-level="3">
-              {{ $t('サイトの技術面に関すること') }}<br />{{
-                $t('オープンデータ、オープンソースに関すること')
-              }}
-            </td>
-            <td class="bureau">{{ $t('戦略政策情報推進本部') }}</td>
-            <td class="tel"><a href="tel:03-5320-7930">03-5320-7930</a></td>
-          </tr>
-          <tr>
-            <td class="content" role="heading" aria-level="3">
-              {{ $t('新型コロナウイルス感染症対策本部会議に関すること')
-              }}<br />{{ $t('都庁来庁者データに関すること') }}
-            </td>
-            <td class="bureau">{{ $t('総務局') }}</td>
-            <td class="tel">
-              {{ $t('感染症対策本部会議に関すること') }}<br /><a
-                href="tel:03-5320-7891"
-                >03-5320-7891</a
-              ><br />
-              {{ $t('都庁来庁者データに関すること') }}<br /><a
-                href="tel:03-5388-2319"
-                >03-5388-2319</a
+              <a
+                href="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html"
+                target="_blank"
+                rel="noopener"
+                >{{ $t('新型コロナウイルス感染症対策に関すること') }}</a
               >
             </td>
+            <td class="bureau">
+              {{ $t('福祉保健部健康増進課感染症対策室感染症対策担当') }}
+            </td>
+            <td class="tel"><a href="tel:0985-44-2620">0985-44-2620</a></td>
           </tr>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('都公式ホームページに関すること') }}<br />{{
-                $t('都公式SNSアカウントに関すること')
-              }}
-            </td>
-            <td class="bureau">{{ $t('生活文化局') }}</td>
-            <td class="tel">
-              {{ $t('都公式ホームページに関すること') }}<br /><a
-                href="tel:03-5388-3061"
-                >03-5388-3061</a
-              ><br />
-              {{ $t('都公式SNSアカウントに関すること') }}<br /><a
-                href="tel:03-5388-3094"
-                >03-5388-3094</a
+              <a
+                href="https://www.pref.miyazaki.lg.jp/keieikinyushien/shigoto/chushokigyo/20200228130742.html"
+                target="_blank"
+                rel="noopener"
+                >{{ $t('中小企業支援に関すること') }}</a
               >
             </td>
+            <td class="bureau">
+              {{ $t('商工観光労働部商工政策課経営金融支援室経営金融支援担当') }}
+            </td>
+            <td class="tel"><a href="tel:0985-26-7097">0985-26-7097</a></td>
           </tr>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('中小企業支援、テレワークに関すること') }}
-            </td>
-            <td class="bureau">{{ $t('産業労働局') }}</td>
-            <td class="tel">
-              {{ $t('資金繰りに関すること') }}<br /><a href="tel:03-5320-4877"
-                >03-5320-4877</a
-              ><br />
-              {{ $t('経営に関すること') }}<br /><a href="tel:03-3251-7881"
-                >03-3251-7881</a
-              ><br />
-              {{ $t('労働関係に関すること') }}<br /><a href="tel:0570-00-6110"
-                >0570-00-6110</a
+              <a
+                href="https://www.pref.miyazaki.lg.jp/ky-somu/kurashi/kyoiku/ringikyugyo.html"
+                target="_blank"
+                rel="noopener"
+              >
+                {{ $t('臨時休校について') }}</a
               >
             </td>
+            <td class="bureau">{{ $t('教育委員会教育政策課') }}</td>
+            <td class="tel"><a href="tel:0985-26-7234">0985-26-7234</a></td>
           </tr>
           <tr>
             <td class="content" role="heading" aria-level="3">
-              {{ $t('新型コロナウイルス感染症の予防・検査・医療に関すること') }}
+              <a
+                href="https://www.pref.miyazaki.lg.jp/kodomo-seisaku/kenko/kodomo/20200302160147.html"
+                target="_blank"
+                rel="noopener"
+                >{{
+                  $t('学校の臨時休業に伴う放課後児童クラブ等の対応について')
+                }}</a
+              >
             </td>
-            <td class="bureau">{{ $t('福祉保健局') }}</td>
-            <td class="tel">
-              <a href="tel:0570-550-571">0570-550-571</a><br />
-              {{ $t('（新型コロナコールセンター）') }}
+            <td class="bureau">
+              {{ $t('福祉保健部こども政策局 こども政策課子育て支援担当') }}
             </td>
-          </tr>
-          <tr>
-            <td class="content" role="heading" aria-level="3">
-              {{ $t('都立学校に関すること') }}
-            </td>
-            <td class="bureau">{{ $t('教育庁') }}</td>
-            <td class="tel"><a href="tel:03-5320-6705">03-5320-6705</a></td>
-          </tr>
-          <tr>
-            <td class="content" role="heading" aria-level="3">
-              {{ $t('スムーズビズに関すること') }}
-            </td>
-            <td class="bureau">{{ $t('都市整備局') }}</td>
-            <td class="tel"><a href="tel:03-5388-3317">03-5388-3317</a></td>
-          </tr>
-          <tr>
-            <td class="content" role="heading" aria-level="3">
-              {{ $t('都営交通に関すること') }}
-            </td>
-            <td class="bureau">{{ $t('交通局') }}</td>
-            <td class="tel">
-              <a href="tel:03-3816-5700">03-3816-5700</a><br />
-              {{ $t('（都営交通お客様センター）') }}
-            </td>
+            <td class="tel"><a href="tel:0985-26-7056">0985-26-7056</a></td>
           </tr>
         </tbody>
       </table>
