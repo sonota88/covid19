@@ -71,7 +71,7 @@
         <!-- eslint-enable -->
       </span>
       <span :class="$style.break">
-        {{ $t('東京都健康安全研究センター等') }}
+        {{ $t('宮崎県健康安全研究センター等') }}
       </span>
       <small :class="[$style.note, $style.fzSmall, $style.break]">
         {{
@@ -170,7 +170,7 @@ export default {
 
 .according {
   .heading {
-    color: $green-1;
+    color: $miyazaki-2;
   }
 
   .diag {
@@ -233,7 +233,7 @@ export default {
     }
 
     &.consult {
-      border: px2vw(3) solid $green-1;
+      border: px2vw(3) solid $miyazaki-1;
       flex-basis: 100%;
     }
 
@@ -328,7 +328,7 @@ export default {
       }
 
       &.consult {
-        border: px2vw(3, $vw) solid $green-1;
+        border: px2vw(3, $vw) solid $miyazaki-1;
       }
 
       &:nth-child(n + 3) {

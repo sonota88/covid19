@@ -27,6 +27,7 @@ export default {
       file: 'en.json',
       description: 'English'
     },
+    /* 訳が揃っていないため非表示
     {
       code: 'zh-cn',
       name: '简体中文',
@@ -48,6 +49,7 @@ export default {
       file: 'ko.json',
       description: 'Korean'
     },
+    */
     // #1126, #872 (comment)
     // ポルトガル語は訳が揃っていないため非表示
     // {

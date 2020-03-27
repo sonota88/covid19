@@ -7,6 +7,7 @@
             :class="$style.FlowRowRowThreeGeneralIcon"
             src="/flow/accessibility-24px.svg"
             aria-hidden="true"
+            alt=" "
           />
           {{ $t('一般の方') }}
         </p>
@@ -43,6 +44,7 @@
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
           aria-hidden="true"
+          alt=" "
         />
       </div>
       <div :class="$style.FlowRowCondition">
@@ -63,6 +65,7 @@
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
           aria-hidden="true"
+          alt=" "
         />
       </div>
       <div :class="$style.FlowRowCondition">
@@ -71,6 +74,7 @@
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
           aria-hidden="true"
+          alt=" "
         />
       </div>
       <div :class="$style.FlowRowCondition">
@@ -79,6 +83,7 @@
           :class="$style.FlowRowConditionIcon"
           src="/flow/check_circle-24px.svg"
           aria-hidden="true"
+          alt=" "
         />
       </div>
     </div>
@@ -90,6 +95,7 @@
               :class="$style.FlowRowRowThreeCareTargetListItemIcon"
               src="/flow/directions_walk-24px.svg"
               aria-hidden="true"
+              alt=" "
             />
             {{ $t('ご高齢な方') }}
           </li>
@@ -98,6 +104,7 @@
               :class="$style.FlowRowRowThreeCareTargetListItemIcon"
               src="/flow/accessible-24px.svg"
               aria-hidden="true"
+              alt=" "
             />
             {{ $t('基礎疾患のある方') }}
           </li>
@@ -106,6 +113,7 @@
               :class="$style.FlowRowRowThreeCareTargetListItemIcon"
               src="/flow/pregnant_woman-24px.svg"
               aria-hidden="true"
+              alt=" "
             />
             {{ $t('妊娠中の方') }}
           </li>
@@ -198,7 +206,7 @@
       margin-bottom: 10px;
       padding: 10px;
       position: relative;
-      border: 2px solid $green-1 !important;
+      border: 2px solid $miyazaki-1 !important;
       border-radius: 2px;
       background-color: $white;
 
@@ -248,7 +256,7 @@
     &Emphasis {
       font-size: 24px;
       font-weight: bold;
-      border-bottom: solid 3px $green-1;
+      border-bottom: solid 3px $miyazaki-1;
 
       &Day {
         font-size: 41px;

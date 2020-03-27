@@ -89,6 +89,7 @@
             :class="$style.FlowSymptomIcon"
             src="/flow/check_circle-24px.svg"
             aria-hidden="true"
+            alt=" "
           />
         </em>
         <span :class="$style.FlowText">{{ $t('または') }}</span>
@@ -98,6 +99,7 @@
             :class="$style.FlowSymptomIcon"
             src="/flow/check_circle-24px.svg"
             aria-hidden="true"
+            alt=" "
           />
         </em>
         <span :class="$style.FlowText">{{ $t('かつ') }}</span>
@@ -113,6 +115,7 @@
             :class="$style.FlowSymptomIcon"
             src="/flow/check_circle-24px.svg"
             aria-hidden="true"
+            alt=" "
           />
         </em>
       </div>
@@ -185,7 +188,7 @@ export default {
 
   &Title {
     margin-bottom: 4px;
-    color: $green-1;
+    color: $miyazaki-2;
     font-size: calc(0.75rem + ((1vw - 7.68px) * 0.4464));
     font-weight: bold;
     display: block;
@@ -213,7 +216,7 @@ export default {
   }
 
   &Line {
-    border-bottom: 2px solid $green-1;
+    border-bottom: 2px solid $miyazaki-1;
     font-style: inherit;
 
     @include largerThan($large) {
@@ -245,7 +248,7 @@ export default {
     align-items: center;
     width: 25%;
     padding: 10px;
-    border: 2px solid $green-1;
+    border: 2px solid $miyazaki-1;
     border-radius: 3px;
     background-color: $white;
     font-size: calc(0.875rem + ((1vw - 7.68px) * 0.8929));
