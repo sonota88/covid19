@@ -8,20 +8,16 @@
       >
         mdi-menu
       </v-icon>
-      <h1 class="SideNavigation-HeaderTitle">
-        <nuxt-link :to="localePath('/')" class="SideNavigation-HeaderLink">
-          <img
-            class="SideNavigation-HeaderLogo"
-            src="/logo.svg"
-            :alt="$t('宮崎県')"
-          />
-          <div class="SideNavigation-HeaderText">
-            {{ $t('menu/新型コロナウイルス感染症') }}<br />{{
-              $t('menu/対策サイト')
-            }}
-          </div>
-        </nuxt-link>
-      </h1>
+      <nuxt-link :to="localePath('/')" class="SideNavigation-HeadingLink">
+        <div class="SideNavigation-Logo">
+          <img src="/logo.svg" :alt="$t('宮崎県')" />
+        </div>
+        <h1 class="SideNavigation-Heading">
+          <span>{{ $t('宮崎県') }}</span>
+          <span>{{ $t('新型コロナウイルス') }}</span>
+          <span>{{ $t('対策サイト') }}</span>
+        </h1>
+      </nuxt-link>
     </header>
 
     <div :class="['SideNavigation-Body', { '-opened': isNaviOpen }]">
@@ -49,40 +45,7 @@
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
           <a
-            href="https://line.me/R/ti/p/%40822sysfc"
-            target="_blank"
-            rel="noopener"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/line.webp" type="image/webp" />
-              <img src="/line.png" alt="LINE" />
-            </picture>
-          </a>
-          <a
-            href="https://twitter.com/tokyo_bousai"
-            target="_blank"
-            rel="noopener"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/twitter.webp" type="image/webp" />
-              <img src="/twitter.png" alt="Twitter" />
-            </picture>
-          </a>
-          <a
-            href="https://www.facebook.com/tochokoho"
-            target="_blank"
-            rel="noopener"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/facebook.webp" type="image/webp" />
-              <img src="/facebook.png" alt="Facebook" />
-            </picture>
-          </a>
-          <a
-            href="https://github.com/tokyo-metropolitan-gov/covid19"
+            href="https://github.com/covid19-miyazaki/covid19"
             target="_blank"
             rel="noopener"
             class="SideNavigation-SocialLink"
@@ -222,6 +185,49 @@ export default Vue.extend({
   }
   &:focus {
     outline: 1px dotted $gray-3;
+  }
+  &-HeadingLink {
+    @include lessThan($small) {
+      display: flex;
+      align-items: center;
+    }
+
+    text-decoration: none;
+  }
+  &-ListContainerIcon {
+    margin: 24px 16px 0;
+  }
+  &-ListItemContainer {
+    padding: 2px 20px;
+  }
+  &-Logo {
+    margin: 20px 16px 0 0;
+    width: 100%;
+    @include lessThan($small) {
+      margin-top: 0;
+      width: 20%;
+    }
+    @include lessThan($small-tiny) {
+      margin-top: 0;
+      width: 30%;
+    }
+    @include lessThan($tiny) {
+      margin-top: 0;
+      width: 40%;
+    }
+  }
+  &-Heading {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #898989;
+    padding: 0.5em 0;
+    text-decoration: none;
+    @include lessThan($small) {
+      margin-top: 0;
+    }
+    span {
+      display: inline-block;
+    }
   }
 }
 
