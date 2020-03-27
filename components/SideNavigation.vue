@@ -158,7 +158,8 @@ export default Vue.extend({
         {
           icon: 'mdi-account-multiple',
           title: this.$t('県民の皆様へ'),
-          link: 'https://www.metro.tokyo.lg.jp/tosei/tosei/news/2019-ncov.html'
+          link:
+            'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/20200121143156.html'
         },
         {
           icon: 'mdi-domain',
@@ -167,19 +168,19 @@ export default Vue.extend({
           divider: true
         },
         {
-          title: this.$t('宮崎県新型コロナウイルス感染症対策本部報'),
+          title: this.$t('宮崎県新型コロナウイルス感染症関連情報'),
           link:
-            'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
+            'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html'
         },
         {
-          title: this.$t('宮崎県主催等 中止又は延期するイベント等'),
+          title: this.$t('宮崎県主催イベント等の開催に関する基準'),
           link:
-            'https://www.seisakukikaku.metro.tokyo.lg.jp/information/event00.html'
+            'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/20200323.html'
         },
         {
           title: this.$t('知事からのメッセージ'),
           link:
-            'https://www.metro.tokyo.lg.jp/tosei/governor/governor/katsudo/2020/03/03_00.html'
+            'https://www.pref.miyazaki.lg.jp/sogoseisaku/kenko/hoken/covid19.html'
         },
         {
           title: this.$t('当サイトについて'),
@@ -191,7 +192,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('宮崎県公式ホームページ'),
-          link: 'https://www.metro.tokyo.lg.jp/'
+          link: 'https://www.pref.miyazaki.lg.jp/'
         }
       ]
     }
