@@ -105,12 +105,7 @@ export default Vue.extend({
         {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('県内の最新感染動向'),
-          link: this.localePath('/')
-        },
-        {
-          icon: 'CovidIcon',
-          title: this.$t('新型コロナウイルス感染症が心配なときに'),
-          link: this.localePath('/flow'),
+          link: this.localePath('/'),
           divider: true
         },
         {
