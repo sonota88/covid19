@@ -45,6 +45,39 @@
       <footer class="SideNavigation-Footer">
         <div class="SideNavigation-Social">
           <a
+            href="https://www.youtube.com/user/miyazaki/videos"
+            target="_blank"
+            rel="noopener"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/youtube.webp" type="image/webp" />
+              <img src="/youtube.png" alt="YouTube" />
+            </picture>
+          </a>
+          <a
+            href="https://twitter.com/miyazakipref"
+            target="_blank"
+            rel="noopener"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/twitter.webp" type="image/webp" />
+              <img src="/twitter.png" alt="Twitter" />
+            </picture>
+          </a>
+          <a
+            href="https://www.facebook.com/miyazakipref.koho/"
+            target="_blank"
+            rel="noopener"
+            class="SideNavigation-SocialLink"
+          >
+            <picture>
+              <source srcset="/facebook.webp" type="image/webp" />
+              <img src="/facebook.png" alt="Facebook" />
+            </picture>
+          </a>
+          <a
             href="https://github.com/covid19-miyazaki/covid19"
             target="_blank"
             rel="noopener"
