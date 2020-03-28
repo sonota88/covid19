@@ -14,7 +14,7 @@
         </div>
         <h1 class="SideNavigation-Heading">
           <span>{{ $t('宮崎県') }}</span>
-          <span>{{ $t('新型コロナウイルス') }}</span>
+          <span>{{ $t('新型コロナウイルス感染症') }}</span>
           <span>{{ $t('対策サイト') }}</span>
         </h1>
       </nuxt-link>
