@@ -1,19 +1,14 @@
-name: production deploy
+name: pull request test for development
 
-on:
-  push:
+on: 
+  pull_request:
     branches:
-      - master
-
+      - development
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-18.04
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: master
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -27,17 +22,13 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - run: yarn install --frozen-lockfile
       - run: yarn run test
       - run: yarn run generate:deploy --fail-on-page-error
 
-      - name: Deploy to netlify
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: archive dist
+        uses: actions/upload-artifact@v1
         with:
-          args: deploy --dir=dist --prod
-          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-
+          name: dist
+          path: dist
