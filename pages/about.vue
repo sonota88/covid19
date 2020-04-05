@@ -206,6 +206,34 @@
         </i18n>
       </p>
     </StaticCard>
+    <StaticCard>
+      <h3>{{ $t('謝辞') }}</h3>
+      <p>
+        {{
+          $t(
+            '当サイトは、東京都 新型コロナウイルス感染症対策サイトのソースコードを基に、鹿児島県 新型コロナウイルス感染症対策サイトを参考にして作成されました。心より感謝いたします。'
+          )
+        }}
+      </p>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/tokyo-metropolitan-gov/covid19"
+            target="_blank"
+            rel="noopener"
+            >tokyo-metropolitan-gov/covid19</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/codeforkagoshima/covid19"
+            target="_blank"
+            rel="noopener"
+            >codeforkagoshima/covid19</a
+          >
+        </li>
+      </ul>
+    </StaticCard>
   </div>
 </template>
 
