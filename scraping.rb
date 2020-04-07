@@ -38,8 +38,7 @@ puts news
 
 # JSON出力
 File.open("sample2.json", 'w') do |file|
-  hash = { "Ocean" => { "Squid" => 10, "Octopus" =>8 }}
-  str = JSON.dump(hash, file)
+  str = JSON.dump(news, file)
 end
 
 exit
