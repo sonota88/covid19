@@ -16,15 +16,22 @@ end
 # ログイン
 driver.navigate.to('https://www.pref.miyazaki.lg.jp/kenko/hoken/kansensho/covid19/hassei.html') #(ENV['URL'])
 data = driver.page_source
-print 'こんにちは'
-print '今日の天気は'
+puts 'こんにちは'
+puts '今日の天気は'
 list_table = driver.find_element(:class => "list_table")
 date = list_table.find_element(:class => "date")
-link = list_table.find_element(:tag_name => "a")
-content = list_table.find_element(:tag_name => "p")
-print date.text
-print link.text
-print content.text
+url = list_table.find_elements(:tag_name => "a").get_attribute("href")
+text = list_table.find_element(:tag_name => "a")
+puts date.text
+puts url.text
+puts text.text
+
+# JSON出力
+File.open("sample2.json", 'w') do |file|
+  hash = { "Ocean" => { "Squid" => 10, "Octopus" =>8 }}
+  str = JSON.dump(hash, file)
+end
+
 driver.find_and_wait_element(:id, 'login')
 driver.find_element(:id, 'loginId').send_keys(ENV['LOGINID'])
 driver.find_element(:id, 'passWord').send_keys(ENV['PASSWORD'])
