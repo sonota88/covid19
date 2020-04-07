@@ -1,7 +1,7 @@
 name: scraping news
 on:
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: '0 * * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -35,4 +35,5 @@ jobs:
         commit-message: 'Update news.json'
         branch: news
         branch-suffix: timestamp
-        title: 'Update News'
+        title: '最新のお知らせ更新'
+        body: '公式サイトのお知らせが更新されました。差分を確認してマージしてください。'
