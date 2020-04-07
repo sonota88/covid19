@@ -13,6 +13,9 @@ jobs:
         volumes:
           - /dev/shm:/dev/shm
     steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
     - uses: actions/checkout@v1
     - uses: actions/setup-ruby@v1
       with:
@@ -41,7 +44,7 @@ jobs:
     - name: Create Pull Request
       # id: cpr
       uses: peter-evans/create-pull-request@v2
-        ref: 'development'
+        # ref: 'development'
       # with:
       #   token: ${{ secrets.GITHUB_TOKEN }}
       #   commit-message: Add report file
