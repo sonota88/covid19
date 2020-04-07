@@ -20,17 +20,20 @@ puts 'こんにちは'
 puts '今日の天気は'
 list_table = driver.find_element(:class => "list_table")
 dates = list_table.find_elements(:class => "date")
-url = list_table.find_element(:tag_name => "a").attribute("href")
+urls = list_table.find_elements(:tag_name => "a")
 texts = list_table.find_elements(:tag_name => "a")
 puts dates
 count = dates.length - 1
+newsItems = []
 for i in 0..count do
   p i
   p dates[i].text
+  p urls[i].attribute("href")
   p texts[i].text
+  newsItems.push { "date" => dates[i].text, "url" => urls[i].attribute("href"), "text" => texts[i].text }
 end
-puts url
-puts texts
+news = { "newsItems" => newsItems }
+puts news
 
 # JSON出力
 File.open("sample2.json", 'w') do |file|
