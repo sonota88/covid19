@@ -2,6 +2,11 @@
     "newsItems": [
         {
             "date": "2020\/04\/07",
+            "url": "https:\/\/www.pref.miyazaki.lg.jp\/kohosenryaku\/kenko\/hoken\/20200407.html",
+            "text": "新型コロナウイルス感染症患者（第12例目）の発生について（第一報）"
+        },
+        {
+            "date": "2020\/04\/07",
             "url": "https:\/\/www.pref.miyazaki.lg.jp\/kohosenryaku\/kenko\/hoken\/covid19_20200304.html",
             "text": "新型コロナウイルス感染症患者（第1例目）の発生について（続報）"
         },
