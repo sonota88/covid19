@@ -23,10 +23,11 @@ dates = list_table.find_elements(:class => "date")
 url = list_table.find_element(:tag_name => "a").attribute("href")
 texts = list_table.find_elements(:tag_name => "a")
 puts dates
-count = dates.length
-for i in 1..count do
+count = dates.length - 1
+for i in 0..count do
   p i
   p dates[i].text
+  p texts[i].text
 end
 puts url
 puts texts
