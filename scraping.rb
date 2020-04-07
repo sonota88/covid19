@@ -23,7 +23,12 @@ dates = list_table.find_elements(:class => "date")
 url = list_table.find_element(:tag_name => "a").attribute("href")
 texts = list_table.find_elements(:tag_name => "a")
 puts dates
-puts url.text
+count = dates.length
+for i in 1..count do
+  p i
+  p dates[i]
+end
+puts url
 puts texts
 
 # JSON出力
