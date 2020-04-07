@@ -18,8 +18,7 @@ driver.navigate.to('https://www.pref.miyazaki.lg.jp/kenko/hoken/kansensho/covid1
 data = driver.page_source
 print 'こんにちは'
 print '今日の天気は'
-print data
-element = driver.find_element_by_class_name("list_table")
+element = driver.find_element(:class => "list_table")
 print element.text
 driver.find_and_wait_element(:id, 'login')
 driver.find_element(:id, 'loginId').send_keys(ENV['LOGINID'])
