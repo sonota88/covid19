@@ -1,7 +1,7 @@
-name: scraping electric power consumption
-on: push
-  # schedule:
-  # - cron: 0 6 * * *
+name: scraping news
+on:
+  schedule:
+  - cron: '*/5 * * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -13,24 +13,26 @@ jobs:
         volumes:
           - /dev/shm:/dev/shm
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.5'
     - name: execute
       env:
-        URL: ${{ secrets.URL }}
-        LOGINID: ${{ secrets.LOGINID }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        SPREADSHEET_KEY: ${{ secrets.SPREADSHEET_KEY }}
-        GD_CLIENT_ID: ${{ secrets.GD_CLIENT_ID }}
-        GD_CLIENT_SECRET: ${{ secrets.GD_CLIENT_SECRET }}
-        GD_REFRESH_TOKEN: ${{ secrets.GD_REFRESH_TOKEN }}
+        URL: "https://www.pref.miyazaki.lg.jp/kenko/hoken/kansensho/covid19/hassei.html"
         SELENIUM_HOST: localhost
         TZ: Asia/Tokyo
       run: |
         gem install bundler
         bundle update --bundler
         bundle install
-        ruby make_config.rb
         ruby scraping.rb
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        commit-message: 'Update news.json'
+        branch: news
+        branch-suffix: timestamp
+        title: 'Update News'
