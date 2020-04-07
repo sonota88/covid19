@@ -19,12 +19,12 @@ data = driver.page_source
 puts 'こんにちは'
 puts '今日の天気は'
 list_table = driver.find_element(:class => "list_table")
-date = list_table.find_element(:class => "date")
-url = list_table.find_elements(:tag_name => "a").get_attribute("href")
-text = list_table.find_element(:tag_name => "a")
-puts date.text
+dates = list_table.find_elements(:class => "date")
+url = list_table.find_element(:tag_name => "a").get_attribute("href")
+texts = list_table.find_elements(:tag_name => "a")
+puts dates
 puts url.text
-puts text.text
+puts texts
 
 # JSON出力
 File.open("sample2.json", 'w') do |file|
