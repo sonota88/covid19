@@ -21,20 +21,20 @@ jobs:
         ruby-version: '2.5'
     - name: execute
       env:
-        URL: ${{ secrets.URL }}
-        LOGINID: ${{ secrets.LOGINID }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        SPREADSHEET_KEY: ${{ secrets.SPREADSHEET_KEY }}
-        GD_CLIENT_ID: ${{ secrets.GD_CLIENT_ID }}
-        GD_CLIENT_SECRET: ${{ secrets.GD_CLIENT_SECRET }}
-        GD_REFRESH_TOKEN: ${{ secrets.GD_REFRESH_TOKEN }}
+        URL: "https://www.pref.miyazaki.lg.jp/kenko/hoken/kansensho/covid19/hassei.html"
+        # LOGINID: ${{ secrets.LOGINID }}
+        # PASSWORD: ${{ secrets.PASSWORD }}
+        # SPREADSHEET_KEY: ${{ secrets.SPREADSHEET_KEY }}
+        # GD_CLIENT_ID: ${{ secrets.GD_CLIENT_ID }}
+        # GD_CLIENT_SECRET: ${{ secrets.GD_CLIENT_SECRET }}
+        # GD_REFRESH_TOKEN: ${{ secrets.GD_REFRESH_TOKEN }}
         SELENIUM_HOST: localhost
         TZ: Asia/Tokyo
       run: |
         gem install bundler
         bundle update --bundler
         bundle install
-        ruby make_config.rb
+#        # ruby make_config.rb
         ruby scraping.rb
         git config user.name 'Scraping bot'
         git config user.email 'bot@users.noreply.github.com'
