@@ -26,7 +26,7 @@ puts dates
 count = dates.length
 for i in 1..count do
   p i
-  p dates[i]
+  p dates[i].text
 end
 puts url
 puts texts
@@ -36,6 +36,8 @@ File.open("sample2.json", 'w') do |file|
   hash = { "Ocean" => { "Squid" => 10, "Octopus" =>8 }}
   str = JSON.dump(hash, file)
 end
+
+exit
 
 driver.find_and_wait_element(:id, 'login')
 driver.find_element(:id, 'loginId').send_keys(ENV['LOGINID'])
