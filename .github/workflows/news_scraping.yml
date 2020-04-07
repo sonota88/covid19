@@ -34,7 +34,6 @@ jobs:
         gem install bundler
         bundle update --bundler
         bundle install
-#        # ruby make_config.rb
         ruby scraping.rb
         git config user.name 'Scraping bot'
         git config user.email 'bot@users.noreply.github.com'
