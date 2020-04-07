@@ -20,7 +20,7 @@ puts 'こんにちは'
 puts '今日の天気は'
 list_table = driver.find_element(:class => "list_table")
 dates = list_table.find_elements(:class => "date")
-url = list_table.find_element(:tag_name => "a").get_attribute("href")
+url = list_table.find_element(:tag_name => "a").attribute("href")
 texts = list_table.find_elements(:tag_name => "a")
 puts dates
 puts url.text
