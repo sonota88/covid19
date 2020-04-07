@@ -30,7 +30,8 @@ for i in 0..count do
   p dates[i].text
   p urls[i].attribute("href")
   p texts[i].text
-  newsItems.push { "date" => dates[i].text, "url" => urls[i].attribute("href"), "text" => texts[i].text }
+  newsItem = { "date" => dates[i].text, "url" => urls[i].attribute("href"), "text" => texts[i].text }
+  newsItems.push(newsItem)
 end
 news = { "newsItems" => newsItems }
 puts news
