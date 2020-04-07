@@ -1,7 +1,4 @@
 require 'selenium-webdriver'
-# require 'date'
-# require 'dotenv/load'
-# require 'google_drive'
 
 driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "http://#{ENV['SELENIUM_HOST']}:4444/wd/hub"
 
