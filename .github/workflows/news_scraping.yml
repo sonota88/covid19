@@ -44,12 +44,14 @@ jobs:
       # id: cpr
       uses: peter-evans/create-pull-request@v2
         # ref: 'development'
-      # with:
+      with:
+        branch: news
+        branch-suffix: timestamp
       #   token: ${{ secrets.GITHUB_TOKEN }}
       #   commit-message: Add report file
       #   committer: Peter Evans <peter-evans@users.noreply.github.com>
       #   author: Peter Evans <peter-evans@users.noreply.github.com>
-      #   title: '[Example] Add report file'
+        title: 'Update news ' ${{ github.event.pull_request.head.committed_at }}
       #   body: |
       #     New report
       #     - Contains *today's* date
@@ -66,7 +68,3 @@ jobs:
       #   draft: false
       #   branch: example-patches
       #   base: development
-    - name: Check outputs
-      run: |
-        echo "Pull Request Number - ${{ env.PULL_REQUEST_NUMBER }}"
-        echo "Pull Request Number - ${{ steps.cpr.outputs.pr_number }}"
