@@ -34,6 +34,7 @@ jobs:
       with:
         commit-message: 'Update news.json'
         branch: news
+        base: master
         branch-suffix: timestamp
         title: '最新のお知らせ更新'
         body: '公式サイトのお知らせが更新されました。差分を確認してマージしてください。'
