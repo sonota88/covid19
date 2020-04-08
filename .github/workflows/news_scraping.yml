@@ -1,0 +1,40 @@
+name: scraping news
+on:
+  schedule:
+  - cron: '0 */6 * * *'
+jobs:
+  scraping:
+    runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:3.141.59-vanadium
+        ports:
+          - 4444:4444
+        volumes:
+          - /dev/shm:/dev/shm
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.5'
+    - name: execute
+      env:
+        URL: "https://www.pref.miyazaki.lg.jp/kenko/hoken/kansensho/covid19/hassei.html"
+        SELENIUM_HOST: localhost
+        TZ: Asia/Tokyo
+      run: |
+        gem install bundler
+        bundle update --bundler
+        bundle install
+        ruby scraping.rb
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        commit-message: 'Update news.json'
+        branch: news
+        base: master
+        branch-suffix: timestamp
+        title: '最新のお知らせ更新'
+        body: '公式サイトのお知らせが更新されました。差分を確認してマージしてください。'
