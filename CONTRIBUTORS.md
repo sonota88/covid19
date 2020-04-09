@@ -1,4 +1,4 @@
-Tokyo Covid-19 response site contributors
+Miyazaki Prefecture (unofficial) COVID-19 site contributors
 ============================================
 
 本サイト(宮崎県非公式版)にご協力いただいた皆様
