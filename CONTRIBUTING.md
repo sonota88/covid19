@@ -35,7 +35,7 @@
 * [東京都 新型コロナウイルス対策サイトへの貢献方法を解説(Qiita)](https://qiita.com/FPC_COMMUNITY/items/b9cc072813dc2231b2b2)
 
 ## CONTRIBUTORS.md への追加について
-ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/tokyo-metropolitan-gov/covid19/blob/development/CONTRIBUTORS.md) というファイルがあります。
+ご協力いただいた皆様のお名前（ハンドルネーム）や役割を記す、[CONTRIBUTORS.md](https://github.com/covid19-miyazaki/covid19/blob/development/CONTRIBUTORS.md) というファイルがあります。
 何かしらの貢献を行った方は、ぜひこちらにもお名前をお載せください。
 [#130](https://github.com/covid19-miyazaki/covid19/issues/130) の Issue に、掲載名、リンク先（あれば）、役割をコメントください。
 
