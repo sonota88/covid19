@@ -1,7 +1,7 @@
 Tokyo Covid-19 response site contributors
 ============================================
 
-本サイトにご協力いただいた皆様
+本サイト(宮崎県非公式版)にご協力いただいた皆様
 
 | Name (link) | GitHub | Twitter | Contribution |
 | --- | --- | --- | --- |
