@@ -5,6 +5,7 @@ Miyazaki Prefecture (unofficial) COVID-19 site contributors
 
 | Name (link) | GitHub | Twitter | Contribution |
 | --- | --- | --- | --- |
+| Kosuke Ogawa (Code for MIYAZAKI / alu inc.) | [@koogawa](https://github.com/koogawa) | [@koogawa](https://twitter.com/koogawa) | Frontend / Backend / Native App |
 
 
 
