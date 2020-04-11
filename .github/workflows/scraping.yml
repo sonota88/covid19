@@ -55,7 +55,8 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
-        title: コロナ情報の更新
-        path: master
-        labels: auto_update_covid19
         token: ${{ secrets.GITHUB_TOKEN }}
+        title: コロナ情報の更新
+        commit-message: コロナ情報を更新しました
+        base: master
+        labels: auto_update_covid19
