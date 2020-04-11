@@ -15,7 +15,7 @@ jobs:
         volumes:
           - /dev/shm:/dev/shm
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Setup Python
       uses: actions/setup-python@v1
       with:
