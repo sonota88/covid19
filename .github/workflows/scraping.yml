@@ -63,5 +63,4 @@ jobs:
       with:
         title: コロナ情報の更新
         labels: auto_update_covid19
-        branch: development
         token: ${{ secrets.GITHUB_TOKEN }}
