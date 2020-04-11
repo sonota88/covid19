@@ -57,4 +57,11 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: schedule-scraping
-
+    
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        title: コロナ情報の更新
+        labels: auto_update_covid19
+        branch: development
+        token: ${{ secrets.GITHUB_TOKEN }}
