@@ -1,5 +1,5 @@
 labels:
-  - auto_merge
+  - auto_update_covid19
 
 # マージするPRにつけるラベルの条件
 # 上記の例では、 auto_merge_force OR ( auto_merge AND minor ) の条件に一致したらマージを行います。
