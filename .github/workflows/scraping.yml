@@ -51,16 +51,11 @@ jobs:
         git config --local user.name "Tatsumi0000"
         git config --local user.email "ti18027@student.miyazaki-u.ac.jp"
         git commit -m "Update: コロナ情報" -a
-
-#     - name: Push changes
-#       uses: ad-m/github-push-action@master
-#       with:
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
-#         branch: schedule-scraping
     
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
         title: コロナ情報の更新
+        path: master
         labels: auto_update_covid19
         token: ${{ secrets.GITHUB_TOKEN }}
