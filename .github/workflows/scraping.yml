@@ -58,5 +58,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: コロナ情報の更新
         commit-message: コロナ情報を更新しました．
+        branch: auto-merged
         base: master
         labels: auto_update_covid19
