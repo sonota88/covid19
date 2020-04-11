@@ -2,8 +2,8 @@ name: Scraping CI
 on:
   push:
     branches: schedule-scraping
-    # schedule:
-    #- cron: '0 0-23 * * *'
+    schedule:
+    - cron: '0 0-23 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -45,13 +45,13 @@ jobs:
         TZ: Asia/Tokyo
       run: |
         poetry run python ./scrapingSource/Scraping.py
-        
+
     - name: Set git
       run: |
         git config --local user.name "Tatsumi0000"
         git config --local user.email "ti18027@student.miyazaki-u.ac.jp"
         git commit -m "Update: コロナ情報" -a
-    
+
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
