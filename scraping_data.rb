@@ -20,9 +20,18 @@ for i in 0..count do
   puts "---"
   ul = uls[i]
   puts ul.text
-  p ul.text.match(/^（1）居住地(.+)\n/m)
-  p ul.text.match(/（2）年齢(.+)/)
-  p ul.text.match(/^（3）性別(.+)$/m)
+  address = ul.text.match(/（1）居住地(.+)/)
+  if address {
+    puts address[1]
+  }
+  age = ul.text.match(/（2）年齢(.+)/)
+  if age {
+    puts age[1]
+  }
+  gender = ul.text.match(/（3）性別(.+)/)
+  if gender {
+    puts gender[1]
+  }
 end
 
 exit
