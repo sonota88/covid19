@@ -8,23 +8,16 @@ driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "h
 driver.navigate.to(ENV['URL'])
 list_table = driver.find_element(:class => "list_table")
 urls = list_table.find_elements(:tag_name => "a")
-# texts = list_table.find_elements(:tag_name => "a")
-# count = urls.length - 1
 url = urls[0].attribute("href")
-puts "news url = "
-puts url
 
 # 最新ニュースをスクレイピング
-driver.navigate.to("https://www.pref.miyazaki.lg.jp/kohosenryaku/kenko/hoken/covid19_20200408.html")
-# noicon
+driver.navigate.to(url)
 uls = driver.find_elements(:class => "noicon")
 count = uls.length - 1
 datas = []
 for i in 0..count do
-  puts "---"
   data = { "リリース日" => today, "退院" => "入院中", "date" => today }
   ul = uls[i]
-  # puts ul.text
 
   address = ul.text.match(/居住地(.+)/)
   if address
@@ -47,16 +40,14 @@ for i in 0..count do
     next
   end
 
-  p data
   datas.push(data)
 end
-p datas
+
 data_count = datas.length
 
 data_hash = {}
 File.open("data/data.json") do |file|
   data_hash = JSON.load(file)
-  p data_hash
 end
 
 # data.json を更新
@@ -66,7 +57,6 @@ data_hash["patients"]["data"].concat(datas)
 data_hash["main_summary"]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] + data_count
-# data = 
 data_hash["patients_summary"]["data"].push({ "日付" => today, "小計" => data_count })
 
 data_json = JSON.pretty_generate(data_hash)
