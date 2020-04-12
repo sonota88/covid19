@@ -18,9 +18,10 @@ news = { "newsItems" => newsItems }
 puts news
 
 # JSON出力
-File.open("data/news.json", 'w') do |file|
-  str = JSON.dump(news, file)
-end
+news_json = JSON.pretty_generate(news)
+File.open("data/news.json", mode = "w") { |f|
+  f.write(news_json)
+}
 
 exit
 
