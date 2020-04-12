@@ -4,7 +4,7 @@ require 'selenium-webdriver'
 today = Date.today.strftime("%Y/%m/%d")
 driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "http://#{ENV['SELENIUM_HOST']}:4444/wd/hub"
 
-# スクレイピング
+# 最新ニュースのURL取得
 driver.navigate.to(ENV['URL'])
 list_table = driver.find_element(:class => "list_table")
 urls = list_table.find_elements(:tag_name => "a")
@@ -14,6 +14,7 @@ url = urls[0].attribute("href")
 puts "news url = "
 puts url
 
+# 最新ニュースをスクレイピング
 driver.navigate.to("https://www.pref.miyazaki.lg.jp/kohosenryaku/kenko/hoken/covid19_20200408.html")
 # noicon
 uls = driver.find_elements(:class => "noicon")
@@ -56,5 +57,17 @@ File.open("data/data.json") do |file|
   data_hash = JSON.load(file)
   p data_hash
 end
+
+# data.json を更新
+data_hash["lastUpdate"] = today
+data_hash["patients"]["date"] = today
+data_hash["patients"]["data"].push(datas)
+data_hash["main_summary"]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["value"] + data_count
+data_hash["main_summary"]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["value"] + data_count
+data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] + data_count
+data = 
+data_hash["contacts"]["data"].push({ "日付" => today, "小計" => data_count })
+
+p JSON.pretty_generate(data_hash)
 
 exit
