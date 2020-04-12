@@ -14,7 +14,7 @@ puts url
 
 driver.navigate.to(url)
 # noicon
-uls = list_table.find_elements(:class => "noicon")
+uls = driver.find_elements(:class => "noicon")
 count = uls.length - 1
 for i in 0..count do
   puts uls[i].text
