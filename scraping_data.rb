@@ -50,7 +50,11 @@ for i in 0..count do
   datas.push(data)
 end
 p datas
-# datas の数を数える
+data_count = datas.length
+
+File.open("data/data.json") do |file|
+  data_hash = JSON.load(file)
+  p data_hash
+end
 
 exit
-
