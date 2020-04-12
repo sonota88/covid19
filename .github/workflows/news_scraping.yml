@@ -1,7 +1,7 @@
 name: scraping news
-on: push
-  # schedule:
-  # - cron: '0 */6 * * *'
+on: 
+  schedule:
+  - cron: '0 */3 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
