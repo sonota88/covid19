@@ -19,7 +19,9 @@ count = uls.length - 1
 for i in 0..count do
   puts "---"
   ul = uls[i]
-  p ul.text.match(/居住地(\w+)/m)
+  p ul.text
+  p ul.text.match(/（1）居住地(\w+)/m)
+  p ul.text.match(/（2）年齢(\w+)/m)
 end
 
 exit
