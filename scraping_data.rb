@@ -20,8 +20,9 @@ for i in 0..count do
   puts "---"
   ul = uls[i]
   p ul.text
-  p ul.text.match(/（1）居住地(\w+)/m)
-  p ul.text.match(/（2）年齢(\w+)/m)
+  p ul.text.match(/（1）居住地.+\n/m)
+  p ul.text.match(/（2）年齢(\w+)\n/m)
+  p ul.text.match(/（3）性別(\w+)\n/m)
 end
 
 exit
