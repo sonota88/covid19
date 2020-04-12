@@ -1,11 +1,12 @@
 name: Scraping CI
 on:
+  push:
+    branches: schedule-scraping
   schedule:
     - cron: '*/1 * * * *'
 #   - cron: '0 0-23 * * *'
 env:
   TZ: 'Asia/Tokyo' 
-
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -24,36 +25,30 @@ jobs:
           python-version: '3.7'
     - name: Setup Poetry
       uses: dschep/install-poetry-action@v1.2
-
     - name: Poetry Cache venv
       uses: actions/cache@v1
       with:
           path: ~/.venv
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
           restore-keys: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-
     - name: Set Poetry config
       run: |
           poetry config virtualenvs.in-project false
           poetry config virtualenvs.path ~/.venv
-
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: poetry install
-
     - name: Execute
       env:
         SELENIUM_HOST: localhost
         TZ: Asia/Tokyo
       run: |
         poetry run python ./scrapingSource/Scraping.py
-
     - name: Set git
       run: |
         git config --local user.name "Tatsumi0000"
         git config --local user.email "ti18027@student.miyazaki-u.ac.jp"
         git commit -m "Update: コロナ情報" -a
-    
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
