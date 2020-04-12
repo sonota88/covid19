@@ -53,6 +53,7 @@ end
 p datas
 data_count = datas.length
 
+data_hash = {}
 File.open("data/data.json") do |file|
   data_hash = JSON.load(file)
   p data_hash
