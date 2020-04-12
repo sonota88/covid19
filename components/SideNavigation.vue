@@ -14,7 +14,7 @@
         </div>
         <h1 class="SideNavigation-Heading">
           <span>{{ $t('宮崎県') }}</span>
-          <span>{{ $t('新型コロナウイルス') }}</span>
+          <span>{{ $t('新型コロナウイルス感染症') }}</span>
           <span>{{ $t('対策サイト') }}</span>
         </h1>
       </nuxt-link>
@@ -149,8 +149,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('宮崎県新型コロナウイルス感染症関連情報'),
-          link:
-            'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html'
+          link: this.$t('uri.宮崎県新型コロナウイルス感染症関連情報').toString()
         },
         {
           title: this.$t('宮崎県主催イベント等の開催に関する基準'),

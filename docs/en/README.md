@@ -2,7 +2,7 @@
 
 ![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
 
-[![Miyazaki COVID-19 Task Force website](/static/20200327.png)](https://covid19-miyazaki.netlify.com/)
+[![Miyazaki COVID-19 Task Force website](/static/ogp.png)](https://covid19-miyazaki.netlify.com/)
 
 
 ### [日本語](./../../README.md) | English
