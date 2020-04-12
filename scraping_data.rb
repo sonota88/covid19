@@ -18,8 +18,8 @@ uls = driver.find_elements(:class => "noicon")
 count = uls.length - 1
 for i in 0..count do
   puts "---"
-  ul = uls[i].text
-  p uls[i].text.match(/居住地(\w+)/)
+  ul = uls[i]
+  p ul.text.match(/居住地(\w+)/m)
 end
 
 exit
