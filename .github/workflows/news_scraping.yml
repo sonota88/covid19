@@ -1,7 +1,7 @@
 name: scraping news
-on:
-  schedule:
-  - cron: '0 */6 * * *'
+on: push
+  # schedule:
+  # - cron: '0 */6 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -39,3 +39,16 @@ jobs:
         branch-suffix: timestamp
         title: '最新のお知らせ更新'
         body: '公式サイトのお知らせが更新されました。差分を確認してマージしてください。'
+    - name: Get Diff Action
+      uses: technote-space/get-diff-action@v1.2.2
+    - name: Test
+      run: echo `diff ari`
+      if: steps.git_diff.outputs.diff
+    - name: Test lines
+      run: echo ${{ steps.git_diff.outputs.lines }}
+    - name: Test counr
+      run: echo ${{ steps.git_diff.outputs.count }}
+    - name: Test diff
+      run: echo ${{ steps.git_diff.outputs.diff }}
+    - name: Test insertions
+      run: echo ${{ steps.git_diff.outputs.insertions }}
