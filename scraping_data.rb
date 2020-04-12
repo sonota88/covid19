@@ -67,7 +67,7 @@ data_hash["main_summary"]["children"][0]["value"] = data_hash["main_summary"]["c
 data_hash["main_summary"]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] + data_count
 # data = 
-data_hash["contacts"]["data"].push({ "日付" => today, "小計" => data_count })
+data_hash["patients_summary"]["data"].push({ "日付" => today, "小計" => data_count })
 
 data_json = JSON.pretty_generate(data_hash)
 File.open("data/data.json", mode = "w") { |f|
