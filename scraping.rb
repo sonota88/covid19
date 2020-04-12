@@ -18,7 +18,7 @@ news = { "newsItems" => newsItems }
 puts news
 
 # JSON出力
-news_json = JSON.pretty_generate(news)
+news_json = JSON.pretty_generate(news, {:indent => "    "})
 File.open("data/news.json", mode = "w") { |f|
   f.write(news_json)
 }
