@@ -3,7 +3,7 @@ on:
   push:
     branches: schedule-scraping
   schedule:
-    - cron: '0 0-23 * * *'
+    - cron: '0 * * * *'
 env:
   TZ: 'Asia/Tokyo' 
 jobs:
