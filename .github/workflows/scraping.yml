@@ -2,10 +2,8 @@ name: Scraping CI
 env:
   TZ: 'Asia/Tokyo' 
 on:
-  push:
-    branches: schedule-scraping
   schedule:
-    - cron: '20 * * * *'
+    - cron: 27 * * * *
 jobs:
   scraping:
     runs-on: ubuntu-latest
