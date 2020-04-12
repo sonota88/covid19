@@ -26,7 +26,7 @@ for i in 0..count do
   ul = uls[i]
   # puts ul.text
 
-  address = ul.text.match(/（1）居住地(.+)/)
+  address = ul.text.match(/居住地(.+)/)
   if address
     data["居住地"] = address[1]
   else
@@ -40,7 +40,7 @@ for i in 0..count do
     next
   end
 
-  gender = ul.text.match(/（3）性別(.+)/)
+  gender = ul.text.match(/性別(.+)/)
   if gender
     data["性別"] = gender[1]
   else
@@ -66,9 +66,12 @@ data_hash["patients"]["data"].push(datas)
 data_hash["main_summary"]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] + data_count
-data = 
+# data = 
 data_hash["contacts"]["data"].push({ "日付" => today, "小計" => data_count })
 
-p JSON.pretty_generate(data_hash)
+data_json = JSON.pretty_generate(data_hash)
+File.open("data/data.json", mode = "w") { |f|
+  f.write(data_json)
+}
 
 exit
