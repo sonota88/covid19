@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo' 
 on:
   schedule:
-  - cron: '38 0-23 * * *'
+  - cron: '45 0-23 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
