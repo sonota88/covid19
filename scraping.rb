@@ -8,7 +8,8 @@ list_table = driver.find_element(:class => "list_table")
 dates = list_table.find_elements(:class => "date")
 urls = list_table.find_elements(:tag_name => "a")
 texts = list_table.find_elements(:tag_name => "a")
-count = dates.length - 1
+NUM_TOPICS = 4
+count = NUM_TOPICS - 1
 newsItems = []
 for i in 0..count do
   newsItem = { "date" => dates[i].text, "url" => urls[i].attribute("href"), "text" => texts[i].text }
