@@ -1,7 +1,8 @@
 name: Scraping CI
 on:
   schedule:
-  - cron: '0 0-23 * * *'
+    - cron: '*/1 * * * *'
+#   - cron: '0 0-23 * * *'
 env:
   TZ: 'Asia/Tokyo' 
 
