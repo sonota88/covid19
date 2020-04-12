@@ -28,7 +28,7 @@ jobs:
         gem install bundler
         bundle update --bundler
         bundle install
-        ruby scraping.rb
+        ruby scraping_data.rb
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
