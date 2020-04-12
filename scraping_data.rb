@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 
+today = Date.today.strftime("%Y/%m/%d")
 driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "http://#{ENV['SELENIUM_HOST']}:4444/wd/hub"
 
 # スクレイピング
@@ -16,32 +17,37 @@ driver.navigate.to("https://www.pref.miyazaki.lg.jp/kohosenryaku/kenko/hoken/cov
 # noicon
 uls = driver.find_elements(:class => "noicon")
 count = uls.length - 1
+datas = []
 for i in 0..count do
   puts "---"
+  data = { "リリース日" => today, "退院" => "入院中", "date" => today }
   ul = uls[i]
-  puts ul.text
+  # puts ul.text
 
   address = ul.text.match(/（1）居住地(.+)/)
   if address
-    puts address[1]
+    date["居住地"] = address[1]
   else
     next
   end
 
-  age = ul.text.match(/（2）年齢(.+)/)
+  age = ul.text.match(/年齢(.+)/)
   if age
-    puts age[1]
+    date["年代"] = age[1]
   else
     next
   end
 
   gender = ul.text.match(/（3）性別(.+)/)
   if gender
-    puts gender[1]
+    date["性別"] = gender[1]
   else
     next
   end
-end
 
+  p date
+  datas.push(data)
+end
+p datas
 exit
 
