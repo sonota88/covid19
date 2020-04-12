@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require 'date'
+# require 'date'
 
 today = Date.today.strftime("%Y/%m/%d")
 driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "http://#{ENV['SELENIUM_HOST']}:4444/wd/hub"
@@ -27,28 +27,30 @@ for i in 0..count do
 
   address = ul.text.match(/（1）居住地(.+)/)
   if address
-    date["居住地"] = address[1]
+    data["居住地"] = address[1]
   else
     next
   end
 
   age = ul.text.match(/年齢(.+)/)
   if age
-    date["年代"] = age[1]
+    data["年代"] = age[1]
   else
     next
   end
 
   gender = ul.text.match(/（3）性別(.+)/)
   if gender
-    date["性別"] = gender[1]
+    data["性別"] = gender[1]
   else
     next
   end
 
-  p date
+  p data
   datas.push(data)
 end
 p datas
+# datas の数を数える
+
 exit
 
