@@ -30,6 +30,7 @@ jobs:
         bundle install
         ruby scraping.rb
     - name: Create Pull Request
+      id: cpr
       uses: peter-evans/create-pull-request@v2
       with:
         commit-message: 'Update news.json'
@@ -39,6 +40,9 @@ jobs:
         branch-suffix: timestamp
         title: '最新のお知らせ更新'
         body: '公式サイトのお知らせが更新されました。差分を確認してマージしてください。'
+    - name: Check outputs
+      run: |
+        echo "Pull Request Number - ${{ steps.cpr.outputs.pr_number }}"
     - name: Get Diff Action
       uses: technote-space/get-diff-action@v1.2.2
     - name: Scraping Data
@@ -59,3 +63,4 @@ jobs:
         branch-suffix: timestamp
         title: '陽性患者数更新'
         body: '公式サイトの陽性患者数が更新されました。差分を確認してマージしてください。'
+      if: steps.git_diff.outputs.diff
