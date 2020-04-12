@@ -12,12 +12,14 @@ url = urls[0].attribute("href")
 puts "news url = "
 puts url
 
-driver.navigate.to(url)
+driver.navigate.to("https://www.pref.miyazaki.lg.jp/kohosenryaku/kenko/hoken/covid19_20200408.html")
 # noicon
 uls = driver.find_elements(:class => "noicon")
 count = uls.length - 1
 for i in 0..count do
-  puts uls[i].text
+  puts "---"
+  ul = uls[i].text
+  p uls[i].text.match(/居住地(\w+)/)
 end
 
 exit
