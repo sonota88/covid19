@@ -62,7 +62,7 @@ end
 # data.json を更新
 data_hash["lastUpdate"] = today
 data_hash["patients"]["date"] = today
-data_hash["patients"]["data"].push(datas)
+data_hash["patients"]["data"].concat(datas)
 data_hash["main_summary"]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["value"] + data_count
 data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] = data_hash["main_summary"]["children"][0]["children"][0]["children"][0]["value"] + data_count

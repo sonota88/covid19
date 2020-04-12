@@ -29,6 +29,11 @@ jobs:
         bundle update --bundler
         bundle install
         ruby scraping_data.rb
+    - name: Get Diff Action
+      uses: technote-space/get-diff-action@v1.2.2
+    - name: Test
+      run: echo `diff ari`
+      if: steps.git_diff.outputs.diff
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
       with:
@@ -39,11 +44,6 @@ jobs:
         branch-suffix: timestamp
         title: '最新のお知らせ更新'
         body: '公式サイトのお知らせが更新されました。差分を確認してマージしてください。'
-    - name: Get Diff Action
-      uses: technote-space/get-diff-action@v1.2.2
-    - name: Test
-      run: echo `diff ari`
-      if: steps.git_diff.outputs.diff
     - name: Test lines
       run: echo ${{ steps.git_diff.outputs.lines }}
     - name: Test counr
