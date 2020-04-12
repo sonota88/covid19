@@ -1,5 +1,5 @@
 labels:
-  - auto_update_covid19
+  - auto_merge
 
 merge_type: squash # マージモード (optional): merge, squash, rebase デフォルト: merge
 delete_branch: delete # マージ後にブランチを削除するかどうか (optional): delete または 空欄
