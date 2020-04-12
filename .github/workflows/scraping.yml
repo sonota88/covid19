@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo' 
 on:
   schedule:
-  - cron: '5 * * * *'
+  - cron: '30 * * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -16,8 +16,6 @@ jobs:
           - /dev/shm:/dev/shm
     steps:
     - uses: actions/checkout@v2
-      with:
-          ref: schedule-scraping
     - name: Setup Python
       uses: actions/setup-python@v1
       with:
@@ -54,6 +52,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: コロナ情報の更新
         commit-message: コロナ情報を更新しました．
-        branch: auto-merge
+        branch: auto_update_covid19
         base: master
-        labels: auto_update_covid19
+        labels: auto_merge
