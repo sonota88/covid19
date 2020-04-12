@@ -1,9 +1,8 @@
 name: Scraping CI
 on:
-  push:
-    branches: schedule-scraping
-    schedule:
-    - cron: '0 0-23 * * *'
+  schedule:
+  - cron: 0 0-23 * * *
+    
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -62,6 +61,6 @@ jobs:
       uses: peter-evans/create-pull-request@v2
       with:
         title: コロナ情報の更新
-        labels: auto_update_covid19
+        labels: auto_merge
         branch: development
         token: ${{ secrets.GITHUB_TOKEN }}
