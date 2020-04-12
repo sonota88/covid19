@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo' 
 on:
   schedule:
-  - cron: '45 0-23 * * *'
+  - cron: '0 * * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -16,6 +16,8 @@ jobs:
           - /dev/shm:/dev/shm
     steps:
     - uses: actions/checkout@master
+      with:
+          ref: schedule-scraping
     - name: Setup Python
       uses: actions/setup-python@v1
       with:
