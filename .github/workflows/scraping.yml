@@ -54,4 +54,3 @@ jobs:
         commit-message: コロナ情報を更新しました．
         branch: auto_update_covid19
         base: master
-        labels: auto_merge
