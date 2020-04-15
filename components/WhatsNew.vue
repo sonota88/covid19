@@ -84,6 +84,8 @@ export default Vue.extend({
 .WhatsNew .WhatsNew-list {
   padding-left: 0;
   list-style-type: none;
+  height: 105px;
+  overflow-y: scroll;
 
   &-item {
     &-anchor {
