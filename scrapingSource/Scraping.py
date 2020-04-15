@@ -6,7 +6,7 @@
 import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+from datetime import datetime, timedelta, timezone
 
 class Scraping:
     def __init__(self, url="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html", json_path = "./data/data.json"):
@@ -18,6 +18,7 @@ class Scraping:
         self.url = url
         self.json_path = json_path
         self.json = json.load(open(json_path, 'r'))
+        datetime.now().strftime("%Y/%m/%d %H:%M:%S")
         self.covid_data = None
         self.trs = None
         self.tbody = None
@@ -49,9 +50,14 @@ class Scraping:
     def set_parse_table_data_to_json(self):
         """取得したコロナ情報をjsonに格納
         """
+        self.json["lastUpdate"] = self.get_time()
         self.json["main_summary"]["value"] = int(self.covid_data[0])
         self.json["main_summary"]["children"][0]["value"] = int(self.covid_data[1])
         json.dump(self.json, open(self.json_path, 'w'), indent=4, ensure_ascii=False)
+
+    def get_time(self):
+        JST = timezone(timedelta(hours=+9), 'JST')
+        return datetime.now(JST).strftime('%Y/%m/%d')
 
 
 if __name__ == '__main__':
@@ -62,3 +68,4 @@ if __name__ == '__main__':
     scraping.get_table_data()
     scraping.parse_table_data()
     scraping.set_parse_table_data_to_json()
+
