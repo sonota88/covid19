@@ -159,7 +159,7 @@ export default Vue.extend({
         {
           title: this.$t('知事からのメッセージ'),
           link:
-            'https://www.pref.miyazaki.lg.jp/sogoseisaku/kenko/hoken/covid19.html'
+            'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/comment_covid19.html'
         },
         {
           title: this.$t('当サイトについて'),
