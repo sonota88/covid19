@@ -3,12 +3,10 @@
     <li class="item checked">
       <div class="gutter">
         <div class="box tall">
-          <!-- eslint-disable vue/no-v-html-->
-          <span v-html="$t('検査実施人数')" />
-          <!-- eslint-enable vue/no-v-html-->
+          <t-i18n>{{ $t('検査実施人数') }}</t-i18n>
           <span>
             <b>{{ 検査実施人数 }}</b>
-            <span class="unit">{{ $t('人') }}</span>
+            <t-i18n class="unit">{{ $t('人') }}</t-i18n>
           </span>
         </div>
       </div>
@@ -16,13 +14,14 @@
     <li class="item positive">
       <div class="gutter">
         <div class="box tall">
-          <span>
+          <t-i18n>
             {{ $t('陽性者数') }}
-            <br />{{ $t('(累計)') }}
-          </span>
+            <br />
+            {{ $t('(累計)') }}
+          </t-i18n>
           <span>
             <b>{{ 陽性者数 }}</b>
-            <span class="unit">{{ $t('人') }}</span>
+            <t-i18n class="unit">{{ $t('人') }}</t-i18n>
           </span>
         </div>
       </div>
@@ -30,10 +29,10 @@
         <li class="item in-hospital">
           <div class="gutter oneThird">
             <div class="box">
-              <span>{{ $t('入院中') }}</span>
+              <t-i18n>{{ $t('入院中') }}</t-i18n>
               <span>
                 <b>{{ 入院中 }}</b>
-                <span class="unit">{{ $t('人') }}</span>
+                <t-i18n class="unit">{{ $t('人') }}</t-i18n>
               </span>
             </div>
           </div>
@@ -46,7 +45,7 @@
                   <!-- eslint-enable vue/no-v-html-->
                   <span>
                     <b>{{ 軽症中等症 }}</b>
-                    <span class="unit">{{ $t('人') }}</span>
+                    <t-i18n class="unit">{{ $t('人') }}</t-i18n>
                   </span>
                 </div>
               </div>
@@ -54,10 +53,10 @@
             <li class="item serious">
               <div class="gutter">
                 <div class="box short">
-                  <span>{{ $t('重症') }}</span>
+                  <t-i18n>{{ $t('重症') }}</t-i18n>
                   <span>
                     <b>{{ 重症 }}</b>
-                    <span class="unit">{{ $t('人') }}</span>
+                    <t-i18n class="unit">{{ $t('人') }}</t-i18n>
                   </span>
                 </div>
               </div>
@@ -67,10 +66,10 @@
         <li class="item deceased">
           <div class="gutter">
             <div class="box">
-              <span>{{ $t('死亡') }}</span>
+              <t-i18n>{{ $t('死亡') }}</t-i18n>
               <span>
                 <b>{{ 死亡 }}</b>
-                <span class="unit">{{ $t('人') }}</span>
+                <t-i18n class="unit">{{ $t('人') }}</t-i18n>
               </span>
             </div>
           </div>
@@ -78,10 +77,10 @@
         <li class="item recovered">
           <div class="gutter">
             <div class="box">
-              <span>{{ $t('退院') }}</span>
+              <t-i18n>{{ $t('退院') }}</t-i18n>
               <span>
                 <b>{{ 退院 }}</b>
-                <span class="unit">{{ $t('人') }}</span>
+                <t-i18n class="unit">{{ $t('人') }}</t-i18n>
               </span>
             </div>
           </div>
@@ -92,7 +91,12 @@
 </template>
 
 <script>
+import TI18n from '@/components/TI18n.vue'
+
 export default {
+  components: {
+    TI18n
+  },
   props: [
     '検査実施人数',
     '陽性者数',

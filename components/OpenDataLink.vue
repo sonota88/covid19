@@ -1,6 +1,8 @@
 <template>
   <a class="OpenDataLink" :href="url" target="_blank" rel="noopener">
-    {{ $t('オープンデータを入手') }}
+    <t-i18n>
+      {{ $t('オープンデータを入手') }}
+    </t-i18n>
     <v-icon
       class="ExternalLinkIcon"
       size="15"
@@ -23,8 +25,12 @@
 </style>
 <script lang="ts">
 import Vue from 'vue'
+import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
+  components: {
+    TI18n
+  },
   props: {
     url: {
       type: String,

@@ -8,7 +8,9 @@
             `background-color: ${item.color}; border: 1px solid ${item.borderColor}`
           "
         />
-        {{ `${item.valueFrom}〜${item.valueTo !== null ? item.valueTo : ''}` }}
+        <t-i18n>
+          {{ `${item.valueFrom}〜${item.valueTo !== null ? item.valueTo : ''}` }}
+        </t-i18n>
       </li>
     </ul>
   </div>
@@ -42,7 +44,12 @@ ul {
 </style>
 
 <script>
+import TI18n from '@/components/TI18n.vue'
+
 export default {
+  components: {
+    TI18n
+  },
   props: {
     legendData: {
       type: Array,

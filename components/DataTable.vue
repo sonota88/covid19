@@ -13,9 +13,33 @@
       :fixed-header="true"
       :mobile-breakpoint="0"
       class="cardTable"
-    />
+    >
+      <template v-slot:body="{ items }">
+        <tbody>
+         <tr v-for="item in items" :key="item.text">
+            <th class="text-start">
+              <t-i18n>{{ item['公表日'] }}</t-i18n>
+            </th>
+            <td class="text-start">
+              <t-i18n>{{ item['居住地'] }}</t-i18n>
+            </td>
+            <td class="text-start">
+              <t-i18n>{{ item['年代'] }}</t-i18n>
+            </td>
+            <td class="text-start">
+              <t-i18n>{{ item['性別'] }}</t-i18n>
+            </td>
+            <td class="text-center">
+              <t-i18n>{{ item['退院'] }}</t-i18n>
+            </td>
+          </tr>
+        </tbody>
+      </template>
+    </v-data-table>
     <div class="note">
-      {{ $t('※退院には、死亡退院を含む') }}
+      <t-i18n>
+        {{ $t('※退院には、死亡退院を含む') }}
+      </t-i18n>
     </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
@@ -87,9 +111,10 @@
 import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
-  components: { DataView, DataViewBasicInfoPanel },
+  components: { DataView, DataViewBasicInfoPanel, TI18n },
   props: {
     title: {
       type: String,
