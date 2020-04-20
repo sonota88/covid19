@@ -33,7 +33,9 @@ jobs:
       - run: yarn run generate:deploy --fail-on-page-error
         
       - name: Debug
-      - run: git status
+      - run: |
+          - ls
+          - git status
         
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
