@@ -14,8 +14,12 @@
                 {{ $t('お問い合わせ内容') }}
               </t-i18n>
             </th>
-            <th class="text-center" scope="col"><t-i18n>{{ $t('局名') }}</t-i18n></th>
-            <th class="text-center" scope="col"><t-i18n>{{ $t('電話番号') }}</t-i18n></th>
+            <th class="text-center" scope="col">
+              <t-i18n>{{ $t('局名') }}</t-i18n>
+            </th>
+            <th class="text-center" scope="col">
+              <t-i18n>{{ $t('電話番号') }}</t-i18n>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +29,9 @@
                 href="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/covid19.html"
                 target="_blank"
                 rel="noopener"
-                ><t-i18n>{{ $t('新型コロナウイルス感染症対策に関すること') }}</t-i18n></a
+                ><t-i18n>{{
+                  $t('新型コロナウイルス感染症対策に関すること')
+                }}</t-i18n></a
               >
             </td>
             <td class="bureau">
@@ -46,7 +52,9 @@
             </td>
             <td class="bureau">
               <t-i18n>
-                {{ $t('商工観光労働部商工政策課経営金融支援室経営金融支援担当') }}
+                {{
+                  $t('商工観光労働部商工政策課経営金融支援室経営金融支援担当')
+                }}
               </t-i18n>
             </td>
             <td class="tel"><a href="tel:0985-26-7097">0985-26-7097</a></td>
@@ -63,7 +71,9 @@
                 </t-i18n></a
               >
             </td>
-            <td class="bureau"><t-i18n>{{ $t('教育委員会教育政策課') }}</t-i18n></td>
+            <td class="bureau">
+              <t-i18n>{{ $t('教育委員会教育政策課') }}</t-i18n>
+            </td>
             <td class="tel"><a href="tel:0985-26-7234">0985-26-7234</a></td>
           </tr>
           <tr>
@@ -72,7 +82,7 @@
                 href="https://www.pref.miyazaki.lg.jp/kodomo-seisaku/kenko/kodomo/20200302160147.html"
                 target="_blank"
                 rel="noopener"
-                >
+              >
                 <t-i18n>
                   {{
                     $t('学校の臨時休業に伴う放課後児童クラブ等の対応について')

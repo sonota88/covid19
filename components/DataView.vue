@@ -70,7 +70,9 @@
               </v-icon>
             </div>
 
-            <h4><t-i18n>{{ $t('埋め込み用コード') }}</t-i18n></h4>
+            <h4>
+              <t-i18n>{{ $t('埋め込み用コード') }}</t-i18n>
+            </h4>
 
             <div class="EmbedCode">
               <v-icon
@@ -147,7 +149,9 @@
         </t-i18n>
       </div>
       <v-footer class="DataView-Footer">
-        <time :datetime="date"><t-i18n>{{ $t('{date} 更新', { date }) }}</t-i18n></time>
+        <time :datetime="date"
+          ><t-i18n>{{ $t('{date} 更新', { date }) }}</t-i18n></time
+        >
         <slot name="footer" />
       </v-footer>
     </div>

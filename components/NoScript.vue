@@ -12,34 +12,24 @@
       </style>
       <div class="noscript-heading">
         <img src="/logo.svg" :alt="$t('宮崎県')" />
-        <t-i18n>
-          {{ $t('新型コロナウイルス感染症') }}
-        </t-i18n>
+        {{ $t('新型コロナウイルス感染症') }}
         <br />
-        <t-i18n>
-          {{ $t('対策サイト') }}
-        </t-i18n>
+        {{ $t('対策サイト') }}
       </div>
       <div class="noscript-body">
-        <t-i18n>
-          {{ $t('当サイトではJavaScriptを使用しております。') }}
-        </t-i18n>
+        {{ $t('当サイトではJavaScriptを使用しております。') }}
         <br />
-        <t-i18n>
-          {{
-            $t(
-              'JavaScriptを無効にして使用された場合、各ページが正常に動作しない、または、表示されない場合がございます。'
-            )
-          }}
-        </t-i18n>
+        {{
+          $t(
+            'JavaScriptを無効にして使用された場合、各ページが正常に動作しない、または、表示されない場合がございます。'
+          )
+        }}
         <br />
-        <t-i18n>
-          {{
-            $t(
-              '当サイトをご利用の際には、JavaScriptを有効にして頂きますようお願いいたします。'
-            )
-          }}
-        </t-i18n>
+        {{
+          $t(
+            '当サイトをご利用の際には、JavaScriptを有効にして頂きますようお願いいたします。'
+          )
+        }}
       </div>
     </div>
   </noscript>
@@ -83,11 +73,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
-  components: {
-    TI18n
-  }
+  // pass
 })
 </script>

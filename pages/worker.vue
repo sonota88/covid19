@@ -11,7 +11,7 @@
           href="https://www.pref.miyazaki.lg.jp/keieikinyushien/shigoto/chushokigyo/20200228130742.html"
           target="_blank"
           rel="noopener"
-          >
+        >
           <t-i18n>
             {{
               $t(
@@ -37,7 +37,9 @@
           href="https://www.pref.miyazaki.lg.jp/keieikinyushien/shigoto/chushokigyo/20200131131631.html"
           target="_blank"
           rel="noopener"
-          ><t-i18n>{{ $t('商工業者向け「特別相談窓口」の設置について') }}</t-i18n></a
+          ><t-i18n>{{
+            $t('商工業者向け「特別相談窓口」の設置について')
+          }}</t-i18n></a
         >
       </h3>
       <p>
@@ -56,7 +58,9 @@
           href="https://www.pref.miyazaki.lg.jp/rodoseisaku/shigoto/rodo/mado01.html"
           target="_blank"
           rel="noopener"
-          ><t-i18n>{{ $t('労働相談窓口について（宮崎県中小企業労働相談所）') }}</t-i18n></a
+          ><t-i18n>{{
+            $t('労働相談窓口について（宮崎県中小企業労働相談所）')
+          }}</t-i18n></a
         >
       </h3>
       <p>
@@ -75,7 +79,7 @@
           href="http://hpm.i-port.or.jp/200130113243/"
           target="_blank"
           rel="noopener"
-          >
+        >
           <t-i18n>
             {{
               $t(

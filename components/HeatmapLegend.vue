@@ -9,7 +9,9 @@
           "
         />
         <t-i18n>
-          {{ `${item.valueFrom}〜${item.valueTo !== null ? item.valueTo : ''}` }}
+          {{
+            `${item.valueFrom}〜${item.valueTo !== null ? item.valueTo : ''}`
+          }}
         </t-i18n>
       </li>
     </ul>

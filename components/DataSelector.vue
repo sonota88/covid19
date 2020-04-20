@@ -65,10 +65,10 @@ import Vue from 'vue'
 import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
+  name: 'DataSelector',
   components: {
     TI18n
   },
-  name: 'DataSelector',
   props: {
     value: {
       type: String,

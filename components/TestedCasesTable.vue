@@ -6,7 +6,8 @@
           <t-i18n>
             {{ $t('検査実施人数') }}
           </t-i18n>
-            <br />(<t-i18n>{{ $t('累計') }}</t-i18n>)
+          <br />(<t-i18n>{{ $t('累計') }}</t-i18n
+          >)
           <span>
             <strong>{{ 累計人数 }}</strong>
             <t-i18n :class="$style.unit">{{ $t('人') }}</t-i18n>
@@ -19,7 +20,8 @@
         <t-i18n>
           {{ $t('検査実施件数') }}
         </t-i18n>
-        (<t-i18n>{{ $t('累計') }}</t-i18n>)
+        (<t-i18n>{{ $t('累計') }}</t-i18n
+        >)
       </div>
       <div :class="$style.pillar">
         <div :class="$style.content">
@@ -47,9 +49,7 @@
             <div :class="$style.content">
               <t-i18n>{{ $t('その他.graph') }}</t-i18n>
               <t-i18n :class="$style.small">
-                {{
-                  $t('（チャーター機・クルーズ船等）')
-                }}
+                {{ $t('（チャーター機・クルーズ船等）') }}
               </t-i18n>
               <span>
                 <strong>{{ その他件数 }}</strong>
