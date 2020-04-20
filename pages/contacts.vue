@@ -46,7 +46,7 @@
           <tr>
             <td class="content" role="heading" aria-level="3">
               <a
-                href="https://www.pref.miyazaki.lg.jp/ky-somu/kurashi/kyoiku/ringikyugyo.html"
+                href="https://www.pref.miyazaki.lg.jp/ky-somu/kurashi/kyoiku/20200417174606.html"
                 target="_blank"
                 rel="noopener"
               >
