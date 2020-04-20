@@ -52,7 +52,7 @@
       <h3>3. {{ $t('臨時休校について') }}</h3>
       <p>
         <a
-          href="https://www.pref.miyazaki.lg.jp/ky-somu/kurashi/kyoiku/ringikyugyo.html"
+          href="https://www.pref.miyazaki.lg.jp/ky-somu/kurashi/kyoiku/20200417174606.html"
           target="_blank"
           rel="noopener"
           >{{ $t('詳しくはこちらをご確認ください。') }}</a
