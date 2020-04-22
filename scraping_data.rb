@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-# require 'date'
+require 'date'
 
 today = Date.today.strftime("%Y/%m/%d")
 driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "http://#{ENV['SELENIUM_HOST']}:4444/wd/hub"
