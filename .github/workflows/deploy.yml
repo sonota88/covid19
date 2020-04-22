@@ -32,6 +32,14 @@ jobs:
       - run: yarn run test
       - run: yarn run generate:deploy --fail-on-page-error
 
+      - name: Deploy to LOLIPOP
+        uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        with:
+          ftp-server: ${{ secrets.FTP_HOST }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist
+          
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
         env:
@@ -40,4 +48,3 @@ jobs:
         with:
           args: deploy --dir=dist --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-
