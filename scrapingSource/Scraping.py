@@ -51,6 +51,7 @@ class Scraping:
         """取得したコロナ情報をjsonに格納
         """
         self.json["lastUpdate"] = self.get_time()
+        self.json["patients"]["date"] = self.get_time()
         self.json["main_summary"]["value"] = int(self.covid_data[0])
         self.json["main_summary"]["children"][0]["value"] = int(self.covid_data[1])
         json.dump(self.json, open(self.json_path, 'w'), indent=4, ensure_ascii=False)

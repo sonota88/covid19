@@ -4,7 +4,9 @@
       <v-icon size="24" class="WhatsNew-heading-icon">
         mdi-information
       </v-icon>
-      {{ $t('最新のお知らせ') }}
+      <t-i18n>
+        {{ $t('最新のお知らせ') }}
+      </t-i18n>
     </h3>
     <ul class="WhatsNew-list">
       <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
@@ -21,6 +23,7 @@
             {{ item.date }}
           </time>
           <span class="WhatsNew-list-item-anchor-link">
+            <!-- @todo t-i18n化が必要 -->
             {{ item.text }}
             <v-icon
               v-if="!isInternalLink(item.url)"
@@ -39,8 +42,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { convertDateToISO8601Format } from '@/utils/formatDate'
+import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
+  components: {
+    TI18n
+  },
   props: {
     items: {
       type: Array,
