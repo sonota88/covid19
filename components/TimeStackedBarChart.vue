@@ -3,17 +3,23 @@
     <template v-slot:button>
       <ul :class="$style.GraphDesc">
         <li>
-          {{ $t('（注）医療機関が保険適用で行った検査は含まれていない') }}
+          <t-i18n>
+            {{ $t('（注）医療機関が保険適用で行った検査は含まれていない') }}
+          </t-i18n>
         </li>
         <li>
-          {{ $t('（注）同一の対象者について複数の検体を検査する場合あり') }}
+          <t-i18n>
+            {{ $t('（注）同一の対象者について複数の検体を検査する場合あり') }}
+          </t-i18n>
         </li>
         <li>
-          {{
-            $t(
-              '（注）速報値として公開するものであり、後日確定データとして修正される場合あり'
-            )
-          }}
+          <t-i18n>
+            {{
+              $t(
+                '（注）速報値として公開するものであり、後日確定データとして修正される場合あり'
+              )
+            }}
+          </t-i18n>
         </li>
       </ul>
       <data-selector
@@ -63,6 +69,7 @@ import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { double as colors } from '@/utils/colors'
+import TI18n from '@/components/TI18n.vue'
 
 interface HTMLElementEvent<T extends HTMLElement> extends Event {
   currentTarget: T
@@ -143,7 +150,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   created() {
     this.canvas = process.browser
   },
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: { DataView, DataSelector, DataViewBasicInfoPanel, TI18n },
   props: {
     title: {
       type: String,
