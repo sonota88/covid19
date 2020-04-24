@@ -6,7 +6,9 @@
           class="DataView-Title"
           :class="!!$slots.infoPanel ? 'with-infoPanel' : ''"
         >
-          {{ title }}
+          <t-i18n>
+            {{ title }}
+          </t-i18n>
         </h3>
         <slot name="infoPanel" />
       </div>
@@ -28,7 +30,9 @@
           <div>
             <a class="Permalink" :href="permalink()">
               <time :datetime="formattedDate">
-                {{ $t('{date} 更新', { date }) }}
+                <t-i18n>
+                  {{ $t('{date} 更新', { date }) }}
+                </t-i18n>
               </time>
             </a>
           </div>
@@ -36,22 +40,24 @@
 
         <div v-if="this.$route.query.embed != 'true'" class="Footer-Right">
           <button class="DataView-Share-Opener" @click="toggleShareMenu">
-            <svg
-              width="14"
-              height="16"
-              viewBox="0 0 14 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              :aria-label="$t('{title}のグラフをシェア', { title })"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M7.59999 3.5H9.5L7 0.5L4.5 3.5H6.39999V11H7.59999V3.5ZM8.5 5.75H11.5C11.9142 5.75 12.25 6.08579 12.25 6.5V13.5C12.25 13.9142 11.9142 14.25 11.5 14.25H2.5C2.08579 14.25 1.75 13.9142 1.75 13.5V6.5C1.75 6.08579 2.08579 5.75 2.5 5.75H5.5V4.5H2.5C1.39543 4.5 0.5 5.39543 0.5 6.5V13.5C0.5 14.6046 1.39543 15.5 2.5 15.5H11.5C12.6046 15.5 13.5 14.6046 13.5 13.5V6.5C13.5 5.39543 12.6046 4.5 11.5 4.5H8.5V5.75Z"
-                fill="#808080"
-              />
-            </svg>
+            <t-i18n>
+              <svg
+                width="14"
+                height="16"
+                viewBox="0 0 14 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                :aria-label="$t('{title}のグラフをシェア', { title })"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.59999 3.5H9.5L7 0.5L4.5 3.5H6.39999V11H7.59999V3.5ZM8.5 5.75H11.5C11.9142 5.75 12.25 6.08579 12.25 6.5V13.5C12.25 13.9142 11.9142 14.25 11.5 14.25H2.5C2.08579 14.25 1.75 13.9142 1.75 13.5V6.5C1.75 6.08579 2.08579 5.75 2.5 5.75H5.5V4.5H2.5C1.39543 4.5 0.5 5.39543 0.5 6.5V13.5C0.5 14.6046 1.39543 15.5 2.5 15.5H11.5C12.6046 15.5 13.5 14.6046 13.5 13.5V6.5C13.5 5.39543 12.6046 4.5 11.5 4.5H8.5V5.75Z"
+                  fill="#808080"
+                />
+              </svg>
+            </t-i18n>
           </button>
           <div
             v-if="displayShare"
@@ -64,7 +70,9 @@
               </v-icon>
             </div>
 
-            <h4>{{ $t('埋め込み用コード') }}</h4>
+            <h4>
+              <t-i18n>{{ $t('埋め込み用コード') }}</t-i18n>
+            </h4>
 
             <div class="EmbedCode">
               <v-icon
@@ -136,10 +144,14 @@
 
     <div v-if="showOverlay" class="overlay">
       <div class="overlay-text">
-        {{ $t('埋め込みコードをコピーしました') }}
+        <t-i18n>
+          {{ $t('埋め込みコードをコピーしました') }}
+        </t-i18n>
       </div>
       <v-footer class="DataView-Footer">
-        <time :datetime="date">{{ $t('{date} 更新', { date }) }}</time>
+        <time :datetime="date"
+          ><t-i18n>{{ $t('{date} 更新', { date }) }}</t-i18n></time
+        >
         <slot name="footer" />
       </v-footer>
     </div>
@@ -149,8 +161,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
+  components: {
+    TI18n
+  },
   props: {
     title: {
       type: String,
