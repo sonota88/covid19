@@ -17,9 +17,9 @@
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
-            <th class="text-start">
+            <td class="text-start">
               <t-i18n>{{ item['公表日'] }}</t-i18n>
-            </th>
+            </td>
             <td class="text-start">
               <t-i18n>{{ item['居住地'] }}</t-i18n>
             </td>
