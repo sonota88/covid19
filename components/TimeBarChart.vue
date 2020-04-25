@@ -165,11 +165,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const lastDayBefore = this.chartData.slice(-2)[0].transition
       const lastDayLabel = this.chartData.slice(-1)[0].label
       const lastDayBeforeLabel = this.chartData.slice(-2)[0].label
-      const lastDayDate = new Date(lastDayLabel).getTime()
-      const lastDayBeforeDate = new Date(lastDayBeforeLabel).getTime()
+      const lastDayTime = new Date(lastDayLabel).getTime()
+      const lastDayBeforeTime = new Date(lastDayBeforeLabel).getTime()
 
       // 1日以上差があるということは昨日はゼロ件なのでゼロと比較する必要あり（86,400,000ミリ秒＝１日）
-      const dateDiff = (lastDayDate - lastDayBeforeDate) / 86400000
+      const dateDiff = (lastDayTime - lastDayBeforeTime) / 86400000
       if (dateDiff > 1) return this.formatDayBeforeRatio(lastDay - 0)
 
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
