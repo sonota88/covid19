@@ -472,7 +472,7 @@ export default Vue.extend({
 
           .icon-resize {
             border-radius: 50%;
-            font-size: 30px;
+            // font-size: 30px;
 
             &.twitter {
               color: #fff;
