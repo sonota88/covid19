@@ -250,6 +250,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               gridLines: {
                 display: false
               },
+              offset: true,
               ticks: {
                 fontSize: 9,
                 maxTicksLimit: 20,
