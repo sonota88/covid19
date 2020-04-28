@@ -1,0 +1,57 @@
+name: Scraping CI
+env:
+  TZ: 'Asia/Tokyo' 
+on:
+  schedule:
+  - cron: '0 */12 * * *'
+jobs:
+  scraping:
+    runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:3.141.59-vanadium
+        ports:
+          - 4444:4444
+        volumes:
+          - /dev/shm:/dev/shm
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v1
+      with:
+          python-version: '3.7'
+    - name: Setup Poetry
+      uses: dschep/install-poetry-action@v1.2
+    - name: Poetry Cache venv
+      uses: actions/cache@v1
+      with:
+          path: ~/.venv
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+    - name: Set Poetry config
+      run: |
+          poetry config virtualenvs.in-project false
+          poetry config virtualenvs.path ~/.venv
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: poetry install
+    - name: Execute
+      env:
+        SELENIUM_HOST: localhost
+        TZ: Asia/Tokyo
+      run: |
+        poetry run python ./scrapingSource/Scraping.py
+    - name: Set git
+      run: |
+        git config --local user.name "Tatsumi0000"
+        git config --local user.email "ti18027@student.miyazaki-u.ac.jp"
+        git commit -m "Update: コロナ情報" -a
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: コロナ情報の更新
+        commit-message: コロナ情報を更新しました．
+        branch: auto_update_covid19
+        labels: auto_merge
+        base: master

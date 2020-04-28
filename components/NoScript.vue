@@ -12,15 +12,19 @@
       </style>
       <div class="noscript-heading">
         <img src="/logo.svg" :alt="$t('宮崎県')" />
-        {{ $t('新型コロナウイルス感染症') }}<br />{{ $t('対策サイト') }}
+        {{ $t('新型コロナウイルス感染症') }}
+        <br />
+        {{ $t('対策サイト') }}
       </div>
       <div class="noscript-body">
-        {{ $t('当サイトではJavaScriptを使用しております。') }}<br />
+        {{ $t('当サイトではJavaScriptを使用しております。') }}
+        <br />
         {{
           $t(
             'JavaScriptを無効にして使用された場合、各ページが正常に動作しない、または、表示されない場合がございます。'
           )
-        }}<br />
+        }}
+        <br />
         {{
           $t(
             '当サイトをご利用の際には、JavaScriptを有効にして頂きますようお願いいたします。'
@@ -71,6 +75,6 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  //
+  // pass
 })
 </script>

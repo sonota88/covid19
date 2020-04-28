@@ -7,6 +7,10 @@
 
 ### [日本語](./../../README.md) | English
 
+## Everyone who contributed
+
+Here is the [list](../../CONTRIBUTORS.md) of people who have contributed to this site.
+
 ## How to Contribute
 
 All contributions are welcome!
