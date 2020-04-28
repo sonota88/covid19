@@ -13,9 +13,9 @@
           <img src="/logo.svg" :alt="$t('宮崎県')" />
         </div>
         <h1 class="SideNavigation-Heading">
-          <span>{{ $t('宮崎県') }}</span>
-          <span>{{ $t('新型コロナウイルス感染症') }}</span>
-          <span>{{ $t('対策サイト') }}</span>
+          <t-i18n>{{ $t('宮崎県') }}</t-i18n>
+          <t-i18n>{{ $t('新型コロナウイルス感染症') }}</t-i18n>
+          <t-i18n>{{ $t('対策サイト') }}</t-i18n>
         </h1>
       </nuxt-link>
     </header>
@@ -36,7 +36,9 @@
           class="SideNavigation-Language"
         >
           <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
-            {{ $t('多言語対応選択メニュー') }}
+            <t-i18n>
+              {{ $t('多言語対応選択メニュー') }}
+            </t-i18n>
           </label>
           <LanguageSelector />
         </div>
@@ -102,6 +104,7 @@ import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
 import LanguageSelector from '@/components/LanguageSelector.vue'
 import MenuList from '@/components/MenuList.vue'
+import TI18n from '@/components/TI18n.vue'
 
 type Item = {
   icon?: string
@@ -113,7 +116,8 @@ type Item = {
 export default Vue.extend({
   components: {
     LanguageSelector,
-    MenuList
+    MenuList,
+    TI18n
   },
   props: {
     isNaviOpen: {
@@ -159,7 +163,7 @@ export default Vue.extend({
         {
           title: this.$t('知事からのメッセージ'),
           link:
-            'https://www.pref.miyazaki.lg.jp/sogoseisaku/kenko/hoken/covid19.html'
+            'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/comment_covid19.html'
         },
         {
           title: this.$t('当サイトについて'),

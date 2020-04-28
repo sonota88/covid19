@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo' 
 on:
   schedule:
-  - cron: '30 * * * *'
+  - cron: '0 */12 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -53,4 +53,5 @@ jobs:
         title: コロナ情報の更新
         commit-message: コロナ情報を更新しました．
         branch: auto_update_covid19
+        labels: auto_merge
         base: master

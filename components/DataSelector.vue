@@ -12,7 +12,9 @@
       value="transition"
       class="DataSelector-Button"
     >
-      {{ $t('日別') }}
+      <t-i18n>
+        {{ $t('日別') }}
+      </t-i18n>
     </v-btn>
     <v-btn
       v-ripple="false"
@@ -20,7 +22,9 @@
       value="cumulative"
       class="DataSelector-Button"
     >
-      {{ $t('累計') }}
+      <t-i18n>
+        {{ $t('累計') }}
+      </t-i18n>
     </v-btn>
   </v-btn-toggle>
 </template>
@@ -58,9 +62,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import TI18n from '@/components/TI18n.vue'
 
 export default Vue.extend({
   name: 'DataSelector',
+  components: {
+    TI18n
+  },
   props: {
     value: {
       type: String,
