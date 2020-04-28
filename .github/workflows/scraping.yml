@@ -53,4 +53,5 @@ jobs:
         title: コロナ情報の更新
         commit-message: コロナ情報を更新しました．
         branch: auto_update_covid19
+        labels: auto_merge
         base: master
