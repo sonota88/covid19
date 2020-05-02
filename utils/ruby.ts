@@ -12,7 +12,7 @@ export const createRubyObject = (text: string) => {
   let lastText: string
   let pos = 0
   const texts: RubyText[] = []
-  const regp = /([\p{sc=Han}|・]+?)（([\p{sc=Hiragana}|・]+?)）/gu
+  const regp = /([\p{sc=Han}|・|A-z]+?)（([\p{sc=Hiragana}|\p{sc=Katakana}|ー|・]+?)）/gu
 
   // ふりがなを含んだ文字列をパースしてオブジェクトを生成
   while ((match = XRegExp.exec(text, regp, pos))) {
