@@ -17,7 +17,7 @@
       <template v-slot:header.公表日="{ header }">
         <t-i18n>{{ header.text }}</t-i18n>
       </template>
-      <template v-slot:header.住居地="{ header }">
+      <template v-slot:header.居住地="{ header }">
         <t-i18n>{{ header.text }}</t-i18n>
       </template>
       <template v-slot:header.年代="{ header }">
