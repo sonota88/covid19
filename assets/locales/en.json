@@ -48,7 +48,7 @@
   "日南市": "Nichinan",
   "串間市": "Kushima",
   "高千穂町": "Takachiho",
-  "{age}代": " {age}s",
+  "{ageHead}歳〜{ageTail}歳": " {ageHead}s",
   "10歳未満": "Under 10 years old",
   "男性": "Male",
   "女性": "Female",
