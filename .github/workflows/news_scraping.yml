@@ -60,4 +60,5 @@ jobs:
         branch-suffix: timestamp
         title: '陽性患者数更新'
         body: '公式サイトの情報が更新されました。差分を確認してマージしてください。'
+        token: ${{ secrets.BOT_TOKEN }}
       if: steps.cpr.outputs.pr_number != 0
