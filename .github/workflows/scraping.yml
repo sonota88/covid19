@@ -3,7 +3,7 @@ env:
   TZ: 'Asia/Tokyo' 
 on:
   schedule:
-  - cron: '0 */12 * * *'
+  - cron: '0 */6 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -55,3 +55,4 @@ jobs:
         branch: auto_update_covid19
         labels: auto_merge
         base: master
+        token: ${{ secrets.BOT_TOKEN }}
