@@ -55,8 +55,9 @@ export default {
       } else if (row['年代'] === '不明') {
         row['年代'] = this.$t('不明')
       } else {
-        const age = row['年代'].substring(0, 2)
-        row['年代'] = this.$t('{age}代', { age })
+        const ageHead = row['年代'].substring(0, 2)
+        const ageTail = String(Number(ageHead) + 9)
+        row['年代'] = this.$t('{ageHead}歳〜{ageTail}歳', { ageHead, ageTail })
       }
     }
 
