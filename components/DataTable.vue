@@ -14,6 +14,21 @@
       :mobile-breakpoint="0"
       class="cardTable"
     >
+      <template v-slot:header.公表日="{ header }">
+        <t-i18n>{{ header.text }}</t-i18n>
+      </template>
+      <template v-slot:header.居住地="{ header }">
+        <t-i18n>{{ header.text }}</t-i18n>
+      </template>
+      <template v-slot:header.年代="{ header }">
+        <t-i18n>{{ header.text }}</t-i18n>
+      </template>
+      <template v-slot:header.性別="{ header }">
+        <t-i18n>{{ header.text }}</t-i18n>
+      </template>
+      <template v-slot:header.退院="{ header }">
+        <t-i18n>{{ header.text }}</t-i18n>
+      </template>
       <template v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.text">
