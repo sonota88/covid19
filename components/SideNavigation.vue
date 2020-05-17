@@ -137,7 +137,7 @@ export default Vue.extend({
         {
           icon: 'mdi-human-child',
           title: this.$t('子供の皆様へ'),
-          link: this.switchLocalePath('ja-basic'),
+          link: this.switchLocalePath('ja-basic')
         },
         {
           icon: 'ParentIcon',
