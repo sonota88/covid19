@@ -167,7 +167,6 @@ export default Vue.extend({
   },
   methods: {
     reverseData(data: any) {
-      console.log(typeof data)
       return data.slice().reverse()
     }
   }
