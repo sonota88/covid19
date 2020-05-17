@@ -135,6 +135,11 @@ export default Vue.extend({
           divider: true
         },
         {
+          icon: 'mdi-human-child',
+          title: this.$t('子供の皆様へ'),
+          link: this.switchLocalePath('ja-basic'),
+        },
+        {
           icon: 'ParentIcon',
           title: this.$t('お子様をお持ちの皆様へ'),
           link: this.localePath('/parent')
