@@ -129,15 +129,16 @@ export default Vue.extend({
     items(): Item[] {
       return [
         {
+          icon: 'mdi-human-child',
+          title: this.$t('子供の皆様へ'),
+          link: this.switchLocalePath('ja-basic'),
+          divider: true
+        },
+        {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('県内の最新感染動向'),
           link: this.localePath('/'),
           divider: true
-        },
-        {
-          icon: 'mdi-human-child',
-          title: this.$t('子供の皆様へ'),
-          link: this.switchLocalePath('ja-basic')
         },
         {
           icon: 'ParentIcon',
@@ -386,7 +387,7 @@ export default Vue.extend({
 }
 
 .SideNavigation-Language {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .SideNavigation-LanguageLabel {
