@@ -1,0 +1,4 @@
+[pr-release "branch"]
+    staging = staging
+    production = master
+
