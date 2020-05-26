@@ -12,6 +12,17 @@
         <t-i18n>{{ $t('注釈') }}</t-i18n>
       </div>
     </div>
+    <static-info
+      class="mb-4"
+      :url="
+        'https://www.pref.miyazaki.lg.jp/kansensho-taisaku/kenko/hoken/kinkyujitaisengen_covid19.html'
+      "
+      :text="
+        $t(
+          '第2波第3波に備えて「新しい生活様式」の実践へ！'
+        )
+      "
+    />
     <whats-new class="mb-4" :items="newsItems" />
     <static-info
       class="mb-4"
