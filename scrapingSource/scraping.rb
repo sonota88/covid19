@@ -4,10 +4,6 @@ driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "h
 
 # スクレイピング
 driver.navigate.to(ENV['URL'])
-puts 'こんにちは'
-puts driver.find_elements(:class => "outline").size
-puts driver.find_elements(:class => "list_table").size
-puts '今日の天気は'
 if (driver.find_elements(:class => "list_table").size == 0)
   exit
 end
