@@ -6,9 +6,9 @@ driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "h
 driver.navigate.to(ENV['URL'])
 puts 'こんにちは'
 puts driver.find_element(:class => "outline").size
-puts driver.find_element(:class => "list_table").size
+puts driver.find_element(:class => "list_table").displayed?
 puts '今日の天気は'
-if (driver.find_element(:class => "list_table").size == 0)
+if (driver.find_element(:class => "list_table").displayed?)
   exit
 end
 list_table = driver.find_element(:class => "list_table")
