@@ -1,8 +1,8 @@
-# 宮崎県 新型コロナウイルス感染症対策サイト
+# 宮崎県 新型コロナウイルス感染症対策サイト(非公式)
 
 [![](https://github.com/covid19-miyazaki/covid19/workflows/production%20deploy/badge.svg)](https://github.com/covid19-miyazaki/covid19/actions?query=workflow%3A%22production+deploy%22)
 
-[![宮崎県 新型コロナウイルス感染症対策サイト](/static/ogp.png)](https://covid19-miyazaki.netlify.com/)
+[![宮崎県 新型コロナウイルス感染症対策サイト(非公式)](/static/ogp.png)](https://covid19-miyazaki.netlify.com/)
 
 ### 日本語 | [English](./docs/en/README.md)
 
