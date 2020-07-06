@@ -15,7 +15,7 @@ const config: Configuration = {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s | 宮崎県 新型コロナウイルス感染症対策サイト',
+    titleTemplate: '%s | 宮崎県 新型コロナウイルス感染症対策サイト(非公式)',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
