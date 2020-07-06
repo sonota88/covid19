@@ -1,7 +1,12 @@
 name: scraping news
+# サイト構造がリニューアルしてスクレイピングに失敗しているので一時的に無効にする
 on:
-  schedule:
-  - cron: '0 */6 * * *'
+  push:
+    branches-ignore:
+      - '**'
+# on:
+#   schedule:
+#   - cron: '0 */6 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
