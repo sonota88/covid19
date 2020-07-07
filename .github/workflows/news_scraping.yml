@@ -1,7 +1,12 @@
 name: scraping news
+# サイト構造がリニューアルしてスクレイピングに失敗しているので一時的に無効にする
 on:
-  schedule:
-  - cron: '0 */6 * * *'
+  push:
+    branches-ignore:
+      - '**'
+# on:
+#   schedule:
+#   - cron: '0 */6 * * *'
 jobs:
   scraping:
     runs-on: ubuntu-latest
@@ -26,7 +31,7 @@ jobs:
         gem install bundler
         bundle update --bundler
         bundle install
-        ruby scraping.rb
+        ruby scrapingSource/scraping.rb
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v2
@@ -48,7 +53,7 @@ jobs:
         SELENIUM_HOST: localhost
         TZ: Asia/Tokyo
       run: |
-        ruby scraping_data.rb
+        ruby scrapingSource/scraping_data.rb
       if: steps.cpr.outputs.pr_number != 0
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2
