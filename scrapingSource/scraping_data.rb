@@ -22,12 +22,12 @@ for i in 1..count do
 
   no = tds[0].text
 
-  date_splits = tds[1].text.split("月")
-  month = date_splits[0]
+  dataSplits = tds[1].text.split("月")
+  month = dataSplits[0]
   if month.length == 1 then
     month = "0#{month}"
   end
-  day = date_splits[1].split("日")[0]
+  day = dataSplits[1].split("日")[0]
   if day.length == 1 then
     day = "0#{day}"
   end
@@ -87,22 +87,22 @@ end
 
 data_count = datas.length
 
-data_hash = {}
+dataHash = {}
 File.open("data/data.json") do |file|
-  data_hash = JSON.load(file)
+  dataHash = JSON.load(file)
 end
 
 # data.json を更新
-data_hash["lastUpdate"] = today
-data_hash["patients"]["date"] = today
-data_hash["patients"]["data"] = datas
-data_hash["main_summary"]["children"][0]["value"] = data_count
-data_hash["main_summary"]["children"][0]["children"] = statusHashList
-data_hash["patients_summary"]["data"] = dataHashList
+dataHash["lastUpdate"] = today
+dataHash["patients"]["date"] = today
+dataHash["patients"]["data"] = datas
+dataHash["main_summary"]["children"][0]["value"] = data_count
+dataHash["main_summary"]["children"][0]["children"] = statusHashList
+dataHash["patients_summary"]["data"] = dataHashList
 
-data_json = JSON.pretty_generate(data_hash, {:indent => "    "})
+dataJson = JSON.pretty_generate(dataHash, {:indent => "    "})
 File.open("data/data.json", mode = "w") { |f|
-  f.write(data_json)
+  f.write(dataJson)
 }
 
 exit
