@@ -16,12 +16,6 @@
           target="_blank"
           rel="noopener"
         >
-          <time
-            class="WhatsNew-list-item-anchor-time px-2"
-            :datetime="formattedDate(item.date)"
-          >
-            {{ item.date }}
-          </time>
           <span class="WhatsNew-list-item-anchor-link">
             <!-- @todo t-i18n化が必要 -->
             {{ item.text }}

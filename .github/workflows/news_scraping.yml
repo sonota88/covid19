@@ -24,7 +24,7 @@ jobs:
         ruby-version: '2.5'
     - name: Scraping News
       env:
-        URL: "https://www.pref.miyazaki.lg.jp/kenko/hoken/kansensho/covid19/hassei.html"
+        URL: "https://www.pref.miyazaki.lg.jp/covid-19/index.html"
         SELENIUM_HOST: localhost
         TZ: Asia/Tokyo
       run: |

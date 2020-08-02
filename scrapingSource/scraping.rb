@@ -4,17 +4,16 @@ driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "h
 
 # スクレイピング
 driver.navigate.to(ENV['URL'])
-if (driver.find_elements(:class => "list_table").size == 0)
+if (driver.find_elements(:class => "info_list").size == 0)
+  print "no list_table\n"
   exit
 end
-list_table = driver.find_element(:class => "list_table")
-dates = list_table.find_elements(:class => "date")
-urls = list_table.find_elements(:tag_name => "a")
-texts = list_table.find_elements(:tag_name => "a")
-count = dates.length - 1
+list_table = driver.find_element(:class => "info_list")
+scrapedNews = list_table.find_elements(:tag_name => "a")
+count = scrapedNews.length - 1
 newsItems = []
 for i in 0..count do
-  newsItem = { "date" => dates[i].text, "url" => urls[i].attribute("href"), "text" => texts[i].text }
+  newsItem = { "url" => scrapedNews[i].attribute("href"), "text" => scrapedNews[i].text }
   newsItems.push(newsItem)
 end
 news = { "newsItems" => newsItems }
