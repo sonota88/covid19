@@ -6,13 +6,13 @@ driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "h
 
 # 最新ニュースのURL取得
 driver.navigate.to(ENV['URL'])
-list_table = driver.find_element(:class => "datatable")
-trs = list_table.find_elements(:tag_name => "tr")
+datatable = driver.find_element(:class => "datatable")
+trs = datatable.find_elements(:tag_name => "tr")
 
 count = trs.length - 1
 datas = []
 dates = {}
-statuses = {"入院中"=>0, "宿泊療養中"=>0, "退院" => 0, "死亡" => 0}
+statusHash = {"入院中"=>0, "宿泊療養中"=>0, "退院" => 0, "死亡" => 0}
 
 for i in 1..count do
   # 1行目は列名にあたるのでスキップする
@@ -46,13 +46,13 @@ for i in 1..count do
 
   case status
   when "入院調整中", "入院中",
-    statuses["入院中"] += 1
+    statusHash["入院中"] += 1
   when "宿泊療養中"
-    statuses["宿泊療養中"] += 1
+    statusHash["宿泊療養中"] += 1
   when "死亡"
-    statuses["死亡"] += 1
+    statusHash["死亡"] += 1
   else
-    statuses["退院"] += 1
+    statusHash["退院"] += 1
   end
 
   contactStatus = tds[6].text
@@ -69,17 +69,17 @@ for i in 1..count do
 end
 
 reverseDates = Hash[dates.to_a.reverse]
-dataHash = []
+dataHashList = []
 reverseDates.each do |key, value|
-  dataHash.push({
+  dataHashList.push({
                     "日付"=> key,
                     "小計"=> value
                 })
 end
 
-statusHash = []
-statuses.each do |key, value|
-  statusHash.push({
+statusHashList = []
+statusHash.each do |key, value|
+  statusHashList.push({
                       "attr"=>key,
                       "value"=>value
                   })
@@ -97,8 +97,8 @@ data_hash["lastUpdate"] = today
 data_hash["patients"]["date"] = today
 data_hash["patients"]["data"] = datas
 data_hash["main_summary"]["children"][0]["value"] = data_count
-data_hash["main_summary"]["children"][0]["children"] = statusHash
-data_hash["patients_summary"]["data"] = dataHash
+data_hash["main_summary"]["children"][0]["children"] = statusHashList
+data_hash["patients_summary"]["data"] = dataHashList
 
 data_json = JSON.pretty_generate(data_hash, {:indent => "    "})
 File.open("data/data.json", mode = "w") { |f|
