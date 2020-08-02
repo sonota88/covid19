@@ -4,26 +4,41 @@ driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, url: "h
 
 # スクレイピング
 driver.navigate.to(ENV['URL'])
-if (driver.find_elements(:class => "list_table").size == 0)
+if (driver.find_elements(:class => "info_list").size == 0)
+  puts "no info_list"
   exit
 end
-list_table = driver.find_element(:class => "list_table")
-dates = list_table.find_elements(:class => "date")
-urls = list_table.find_elements(:tag_name => "a")
-texts = list_table.find_elements(:tag_name => "a")
-count = dates.length - 1
+infoList = driver.find_element(:class => "info_list")
+scrapedNews = infoList.find_elements(:tag_name => "a")
+count = scrapedNews.length - 1
 newsItems = []
 for i in 0..count do
-  newsItem = { "date" => dates[i].text, "url" => urls[i].attribute("href"), "text" => texts[i].text }
+  newsItem = { "url" => scrapedNews[i].attribute("href"), "text" => scrapedNews[i].text }
   newsItems.push(newsItem)
 end
 news = { "newsItems" => newsItems }
 puts news
 
 # JSON出力
-news_json = JSON.pretty_generate(news, {:indent => "    "})
+newsJson = JSON.pretty_generate(news, {:indent => "    "})
 File.open("data/news.json", mode = "w") { |f|
-  f.write(news_json)
+  f.write(newsJson)
+}
+
+pcrTable = driver.find_elements(:class => "datatable").last
+rows = pcrTable.find_elements(:tag_name => "tr").last
+total = rows.find_element(:tag_name => "td").find_element(:tag_name => "p")
+
+dataHash = {}
+File.open("data/data.json") do |file|
+  dataHash = JSON.load(file)
+end
+
+dataHash["main_summary"]["value"] = total.text.delete(",").to_i
+
+dataJson = JSON.pretty_generate(dataHash, {:indent => "    "})
+File.open("data/data.json", mode = "w") { |f|
+  f.write(dataJson)
 }
 
 exit
