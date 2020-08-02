@@ -8,8 +8,8 @@ if (driver.find_elements(:class => "info_list").size == 0)
   puts "no info_list"
   exit
 end
-info_list = driver.find_element(:class => "info_list")
-scrapedNews = info_list.find_elements(:tag_name => "a")
+infoList = driver.find_element(:class => "info_list")
+scrapedNews = infoList.find_elements(:tag_name => "a")
 count = scrapedNews.length - 1
 newsItems = []
 for i in 0..count do
@@ -20,25 +20,25 @@ news = { "newsItems" => newsItems }
 puts news
 
 # JSON出力
-news_json = JSON.pretty_generate(news, {:indent => "    "})
+newsJson = JSON.pretty_generate(news, {:indent => "    "})
 File.open("data/news.json", mode = "w") { |f|
-  f.write(news_json)
+  f.write(newsJson)
 }
 
-pcr_table = driver.find_elements(:class => "datatable").last
-rows = pcr_table.find_elements(:tag_name => "tr").last
+pcrTable = driver.find_elements(:class => "datatable").last
+rows = pcrTable.find_elements(:tag_name => "tr").last
 total = rows.find_element(:tag_name => "td").find_element(:tag_name => "p")
 
-data_hash = {}
+dataHash = {}
 File.open("data/data.json") do |file|
-  data_hash = JSON.load(file)
+  dataHash = JSON.load(file)
 end
 
-data_hash["main_summary"]["value"] = total.text.delete(",").to_i
+dataHash["main_summary"]["value"] = total.text.delete(",").to_i
 
-data_json = JSON.pretty_generate(data_hash, {:indent => "    "})
+dataJson = JSON.pretty_generate(dataHash, {:indent => "    "})
 File.open("data/data.json", mode = "w") { |f|
-  f.write(data_json)
+  f.write(dataJson)
 }
 
 exit
