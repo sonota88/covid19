@@ -10,7 +10,7 @@ datatable = driver.find_element(:class => "datatable")
 trs = datatable.find_elements(:tag_name => "tr")
 
 count = trs.length - 1
-datas = []
+dataList = []
 dates = {}
 statusHash = {"入院中"=>0, "宿泊療養中"=>0, "退院" => 0, "死亡" => 0}
 
@@ -65,13 +65,13 @@ for i in 1..count do
   data["退院"] = status
   data["接触状況"] = contactStatus
 
-  datas.push(data)
+  dataList.push(data)
 end
 
 reverseDates = Hash[dates.to_a.reverse]
-dataHashList = []
+patientsSummaryData = []
 reverseDates.each do |key, value|
-  dataHashList.push({
+  patientsSummaryData.push({
                     "日付"=> key,
                     "小計"=> value
                 })
@@ -85,7 +85,7 @@ statusHash.each do |key, value|
                   })
 end
 
-data_count = datas.length
+data_count = dataList.length
 
 dataHash = {}
 File.open("data/data.json") do |file|
@@ -95,10 +95,10 @@ end
 # data.json を更新
 dataHash["lastUpdate"] = today
 dataHash["patients"]["date"] = today
-dataHash["patients"]["data"] = datas
+dataHash["patients"]["data"] = dataList
 dataHash["main_summary"]["children"][0]["value"] = data_count
 dataHash["main_summary"]["children"][0]["children"] = statusHashList
-dataHash["patients_summary"]["data"] = dataHashList
+dataHash["patients_summary"]["data"] = patientsSummaryData
 
 dataJson = JSON.pretty_generate(dataHash, {:indent => "    "})
 File.open("data/data.json", mode = "w") { |f|
