@@ -26,8 +26,8 @@
         </div>
       </div>
       <ul class="group">
-        <li class="item in-hospital">
-          <div class="gutter oneThird">
+        <li class="item deceased">
+          <div class="gutter">
             <div class="box">
               <t-i18n>{{ $t('入院中') }}</t-i18n>
               <span>
@@ -36,32 +36,17 @@
               </span>
             </div>
           </div>
-          <ul class="group">
-            <li class="item mild">
-              <div class="gutter">
-                <div class="box short">
-                  <!-- eslint-disable vue/no-v-html-->
-                  <span v-html="$t('軽症・<br />中等症')" />
-                  <!-- eslint-enable vue/no-v-html-->
-                  <span>
-                    <b>{{ 軽症中等症 }}</b>
-                    <t-i18n class="unit">{{ $t('人') }}</t-i18n>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item serious">
-              <div class="gutter">
-                <div class="box short">
-                  <t-i18n>{{ $t('重症') }}</t-i18n>
-                  <span>
-                    <b>{{ 重症 }}</b>
-                    <t-i18n class="unit">{{ $t('人') }}</t-i18n>
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
+        </li>
+        <li class="item deceased">
+          <div class="gutter">
+            <div class="box">
+              <t-i18n>{{ $t('宿泊療養中') }}</t-i18n>
+              <span>
+                <b>{{ 宿泊療養中 }}</b>
+                <t-i18n class="unit">{{ $t('人') }}</t-i18n>
+              </span>
+            </div>
+          </div>
         </li>
         <li class="item deceased">
           <div class="gutter">
@@ -97,15 +82,7 @@ export default {
   components: {
     TI18n
   },
-  props: [
-    '検査実施人数',
-    '陽性者数',
-    '入院中',
-    '軽症中等症',
-    '重症',
-    '死亡',
-    '退院'
-  ],
+  props: ['検査実施人数', '陽性者数', '入院中', '宿泊療養中', '死亡', '退院'],
   methods: {
     /** 桁数に応じて位置の調整をする */
     getAdjustX(input) {
@@ -277,7 +254,7 @@ export default {
   width: 200%;
 }
 .item.recovered > .gutter > .box::before {
-  width: 520%;
+  width: 400%;
 }
 
 @function px2vw($px, $vw) {
