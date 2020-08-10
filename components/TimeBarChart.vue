@@ -10,13 +10,28 @@
         :style="{ display: canvas ? 'inline-block' : 'none' }"
       />
     </template>
-    <bar
-      :style="{ display: canvas ? 'block' : 'none' }"
-      :chart-id="chartId"
-      :chart-data="displayData"
-      :options="displayOption"
-      :height="240"
-    />
+    <scrollable-chart v-show="canvas" :display-data="displayData">
+      <template v-slot:chart="{ chartWidth }">
+        <bar
+          :style="{ display: canvas ? 'block' : 'none' }"
+          :chart-id="chartId"
+          :chart-data="displayData"
+          :options="displayOption"
+          :height="240"
+          :width="chartWidth"
+        />
+      </template>
+      <template v-slot:sticky-chart>
+        <bar
+          class="sticky-legend"
+          :chart-id="`${chartId}-header`"
+          :chart-data="displayDataHeader"
+          :options="displayOptionHeader"
+          :plugins="yAxesBgPlugin"
+          :height="240"
+        />
+      </template>
+    </scrollable-chart>
     <v-data-table
       :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
       :headers="tableHeaders"
@@ -48,6 +63,8 @@ import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
+import ScrollableChart from '@/components/ScrollableChart.vue'
+import { yAxesBgPlugin } from '@/plugins/vue-chart'
 
 import { single as color } from '@/utils/colors'
 
@@ -107,6 +124,8 @@ type Props = {
   date: string
   unit: string
   url: string
+  yAxesBgPlugin: Chart.PluginServiceRegistrationOptions[]
+  byDate: boolean
 }
 
 const options: ThisTypedComponentOptionsWithRecordProps<
@@ -119,7 +138,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   created() {
     this.canvas = process.browser
   },
-  components: { DataView, DataSelector, DataViewBasicInfoPanel },
+  components: {
+    DataView,
+    DataSelector,
+    DataViewBasicInfoPanel,
+    ScrollableChart
+  },
   props: {
     title: {
       type: String,
@@ -148,6 +172,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     url: {
       type: String,
       default: ''
+    },
+    yAxesBgPlugin: {
+      type: Array,
+      default: () => yAxesBgPlugin
+    },
+    byDate: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
